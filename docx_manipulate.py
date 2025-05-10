@@ -1,32 +1,39 @@
 # import the packages
 from docx import Document
 
-# define the function of replacing the template placeholder with invoice information
+# define the function of replacing the template placeholder with item dictionary information
 def populate_docx_table(item_dict, docx_template_path, new_docx_path):
     """
     Populate a Word docx document table using placeholder keys and a data dictionary.
 
     Parameters:
-        doc_path (str): Path to the input Word template.
-        data_dict (dict): Dictionary with keys matching placeholders in the doc.
-        output_path (str): Path to save the updated document
+        item_dict (dict): Dictionary with keys matching placeholders in the template.
+        docx_template_path (str): Path to the input template.
+        new_docx_path (str): Path to save the updated document.
 
     Returns:
         None
+
+    Raises:
+        TypeError: If the input types are invalid (dictionary and sting for docx file).
+        FileNotFoundError: If the template file does not exist or cannot be opened.
     """
 
     # check the errors for file type
     if isinstance(item_dict, dict) == False:
-        raise Exception("item_dict should be a dictionary.")
+        raise TypeError("item_dict should be a dictionary.")
     elif docx_template_path[-5:] != '.docx':
-        raise Exception("docx_template_path should be a docx file.")
+        raise TypeError("docx_template_path should be a docx file.")
     elif new_docx_path[-5:] != '.docx':
-        raise Exception("new_docx_path should be a docx file.")
+        raise TypeError("new_docx_path should be a docx file.")
 
     # open the template docx
-    doc = Document(docx_template_path)
+    try:
+        doc = Document(docx_template_path)
+    except:
+        raise FileNotFoundError("Error: template file not found or is not a valid .docx file.")
 
-    # replace the placeholder in the docx for all the invoices information
+    # replace the placeholder in the docx for all item_dict information
     for table in doc.tables:
         for row in table.rows:
             for cell in row.cells:

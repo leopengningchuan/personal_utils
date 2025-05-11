@@ -1,7 +1,7 @@
 # import the packages
 from docx import Document
 
-# define the function of replacing the template placeholder with item dictionary information
+# define the function of replacing the template placeholder in tables with item dictionary information
 def populate_docx_table(item_dict, docx_template_path, new_docx_path):
     """
     Populate a Word docx document table using placeholder keys and a data dictionary.
@@ -48,10 +48,10 @@ def populate_docx_table(item_dict, docx_template_path, new_docx_path):
 
 
 
-# define the function of replacing the template placeholder with item dictionary information
-def populate_docx_string(item_dict, docx_template_path, new_docx_path):
+# define the function of replacing the template placeholder in paragraphs with item dictionary information
+def populate_docx_paragraph(item_dict, docx_template_path, new_docx_path):
     """
-    Populate a Word docx document string using placeholder keys and a data dictionary.
+    Populate a Word docx document paragraph using placeholder keys and a data dictionary.
 
     Parameters:
         item_dict (dict): Dictionary with keys matching placeholders in the template.

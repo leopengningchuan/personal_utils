@@ -10,12 +10,12 @@ To address this, this repository was created as a personal centralized utility l
 This project aims to provide a lightweight, reusable Python utility library to support automation, data processing, and scripting tasks across multiple projects with consistent and maintainable code.
 
 ## Table of Contents
-├── README.md
-├── LICENSE.txt
-├── docx_manipulate.py
-│   ├── populate_docx_table()
-│   └── populate_docx_paragraph()
-├── NOTE_AND_REFERENCE.md
+- README.md
+- LICENSE.txt
+- docx_manipulate.py
+  - populate_docx_table()
+  - populate_docx_paragraph()
+- NOTE_AND_REFERENCE.md
 
 ## Instructions
 

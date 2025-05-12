@@ -19,8 +19,17 @@ This project aims to provide a lightweight, reusable Python utility library to s
 
 ## Instructions
 
-### populate_docx_table
+### Using the Utils
+To use functions from `personal_utils`, run the `bind_utils.sh` script to add it as a Git submodule:
 
+```bash
+chmod +x bind_utils.sh
+./bind_utils.sh
+```
+
+This will add the submodule to the `utils/` folder and initialize it automatically.
+
+### populate_docx_table()
 This function replaces placeholders in a Word docx document table using values from a Python dictionary. It requires three inputs: a dictionary with placeholder-value pairs, the path to a Word docx template, and the output path for the generated file. The function iterates through all table cells and replaces any exact matches with corresponding values from the dictionary. Only table content is affected — paragraph text outside tables will remain unchanged. Basic input validation is included to ensure file types and dictionary structure are correct.
 
 > [!NOTE]  
@@ -61,8 +70,7 @@ def populate_docx_table(item_dict, docx_template_path, new_docx_path):
     print(f'---------- {new_docx_path} generated successfully.')
 ```
 
-### populate_docx_paragraph
-
+### populate_docx_paragraph()
 This function replaces placeholders in a Word docx document paragraph text using values from a Python dictionary. It requires three inputs: a dictionary with placeholder-value pairs, the path to a Word docx template, and the output path for the generated file. The function iterates through all paragraphs and replaces any exact matches with corresponding values from the dictionary. Only paragraphs content is affected — tables will remain unchanged. Basic input validation is included to ensure file types and dictionary structure are correct.
 
 ## License

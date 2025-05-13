@@ -29,6 +29,14 @@ chmod +x bind_utils.sh
 
 This will add the submodule to the `utils/` folder and initialize it automatically.
 
+To update the submodule to the latest version from its remote repository, run the following command from the root of the project:
+
+```bash
+git submodule update --remote --merge
+```
+
+---
+
 ### populate_docx_table()
 This function replaces placeholders in a Word docx document table using values from a Python dictionary. It requires three inputs: a dictionary with placeholder-value pairs, the path to a Word docx template, and the output path for the generated file. The function iterates through all table cells and replaces any exact matches with corresponding values from the dictionary. Only table content is affected — paragraph text outside tables will remain unchanged. Basic input validation is included to ensure file types and dictionary structure are correct.
 
@@ -69,6 +77,8 @@ def populate_docx_table(item_dict, docx_template_path, new_docx_path):
     doc.save(new_docx_path)
     print(f'---------- {new_docx_path} generated successfully.')
 ```
+
+---
 
 ### populate_docx_paragraph()
 This function replaces placeholders in a Word docx document paragraph text using values from a Python dictionary. It requires three inputs: a dictionary with placeholder-value pairs, the path to a Word docx template, and the output path for the generated file. The function iterates through all paragraphs and replaces any exact matches with corresponding values from the dictionary. Only paragraphs content is affected — tables will remain unchanged. Basic input validation is included to ensure file types and dictionary structure are correct.

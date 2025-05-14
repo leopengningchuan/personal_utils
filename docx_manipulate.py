@@ -1,5 +1,7 @@
 # import the packages
 from docx import Document
+import os
+from docx2pdf import convert
 
 # define the function of replacing the template placeholder in tables with item dictionary information
 def populate_docx_table(item_dict, docx_template_path, new_docx_path):
@@ -46,7 +48,7 @@ def populate_docx_table(item_dict, docx_template_path, new_docx_path):
     doc.save(new_docx_path)
     print(f'---------- {new_docx_path} generated successfully.')
 
-
+#---
 
 # define the function of replacing the template placeholder in paragraphs with item dictionary information
 def populate_docx_paragraph(item_dict, docx_template_path, new_docx_path):
@@ -90,3 +92,34 @@ def populate_docx_paragraph(item_dict, docx_template_path, new_docx_path):
     # save the docx to the docx path; print reminder
     doc.save(new_docx_path)
     print(f'---------- {new_docx_path} generated successfully.')
+
+#---
+
+def convert_docx_pdf(docx_path, keep = True):
+    """
+    Convert a Word docx document to a PDF file.
+
+    Parameters:
+        docx_path (str): Path to the input docx file.
+        keep (bool, optional): Whether to keep the original docx file after conversion. Defaults to True.
+
+    Returns:
+        None
+
+    Raises:
+        TypeError: If the input path is not a docx file.
+    """
+
+    # check the errors for file type
+    if docx_path[-5:] != '.docx':
+        raise TypeError("docx_path should be a docx file.")
+
+    # convert the docx to pdf
+    convert(docx_path)
+
+    # remove the docx if needed
+    if keep == False:
+        os.remove(docx_path)
+        print(f'---------- {docx_path} converted to PDF successfully, original docx file removed.')
+    else:
+        print(f'---------- {docx_path} converted to PDF successfully, original docx file kept.')

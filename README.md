@@ -83,6 +83,11 @@ def populate_docx_table(item_dict, docx_template_path, new_docx_path):
 ### populate_docx_paragraph()
 This function replaces placeholders in a Word docx document paragraph text using values from a Python dictionary. It requires three inputs: a dictionary with placeholder-value pairs, the path to a Word docx template, and the output path for the generated file. The function iterates through all paragraphs and replaces any exact matches with corresponding values from the dictionary. Only paragraphs content is affected — tables will remain unchanged. Basic input validation is included to ensure file types and dictionary structure are correct.
 
+---
+
+### convert_docx_pdf()
+This function converts a Word docx file to a PDF format. It requires the path to the input docx file and a Boolean flag indicating whether to keep the original file. By default, the original docx file is preserved after conversion. If set to `False`, the file will be deleted after the PDF is generated. The function performs basic input validation and uses the docx2pdf library to execute the conversion.
+
 ## License
 This project is licensed under the MIT License - see the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/leopengningchuan/personal_utils?tab=MIT-1-ov-file) file for details.
 

@@ -15,6 +15,7 @@ This project aims to provide a lightweight, reusable Python utility library to s
 - docx_manipulate.py
   - populate_docx_table()
   - populate_docx_paragraph()
+  - convert_docx_pdf()
 - NOTE_AND_REFERENCE.md
 
 ## Instructions

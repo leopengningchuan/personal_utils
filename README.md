@@ -25,6 +25,7 @@ To use functions from `personal_utils`, run the `bind_utils.sh` script to add it
 
 ```bash
 chmod +x bind_utils.sh
+
 ./bind_utils.sh
 ```
 
@@ -38,7 +39,7 @@ git submodule update --remote --merge
 
 ---
 
-### populate_docx_table()
+### docx_manipulate.populate_docx_table
 This function replaces placeholders in a Word docx document table using values from a Python dictionary. It requires three inputs: a dictionary with placeholder-value pairs, the path to a Word docx template, and the output path for the generated file. The function iterates through all table cells and replaces any exact matches with corresponding values from the dictionary. Only table content is affected — paragraph text outside tables will remain unchanged. Basic input validation is included to ensure file types and dictionary structure are correct.
 
 > [!NOTE]  
@@ -81,12 +82,12 @@ def populate_docx_table(item_dict, docx_template_path, new_docx_path):
 
 ---
 
-### populate_docx_paragraph()
+### docx_manipulate.populate_docx_paragraph
 This function replaces placeholders in a Word docx document paragraph text using values from a Python dictionary. It requires three inputs: a dictionary with placeholder-value pairs, the path to a Word docx template, and the output path for the generated file. The function iterates through all paragraphs and replaces any exact matches with corresponding values from the dictionary. Only paragraphs content is affected — tables will remain unchanged. Basic input validation is included to ensure file types and dictionary structure are correct.
 
 ---
 
-### convert_docx_pdf()
+### docx_manipulate.convert_docx_pdf
 This function converts a Word docx file to a PDF format. It requires the path to the input docx file and a Boolean flag indicating whether to keep the original file. By default, the original docx file is preserved after conversion. If set to `False`, the file will be deleted after the PDF is generated. The function performs basic input validation and uses the docx2pdf library to execute the conversion.
 
 ## License

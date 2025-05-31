@@ -173,7 +173,7 @@ def merge_pdfs(pdf_list, output_path):
 
     # check the length of the pdf_list
     if len(pdf_list) == 0:
-        raise TypeError(f"There is no pdf file in the merged file list.")
+        raise TypeError("There is no pdf file in the merged file list.")
     else:
         print('---------- merge the following pdf files:')
         for file in pdf_list:

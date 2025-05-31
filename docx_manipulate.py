@@ -24,9 +24,9 @@ def populate_docx_table(item_dict, docx_template_path, new_docx_path):
     # check the errors for file type
     if isinstance(item_dict, dict) == False:
         raise TypeError("item_dict should be a dictionary.")
-    elif docx_template_path[-5:] != '.docx':
+    elif not docx_template_path.endswith('.docx'):
         raise TypeError("docx_template_path should be a docx file.")
-    elif new_docx_path[-5:] != '.docx':
+    elif not new_docx_path.endswith('.docx'):
         raise TypeError("new_docx_path should be a docx file.")
 
     # open the template docx
@@ -71,9 +71,9 @@ def populate_docx_paragraph(item_dict, docx_template_path, new_docx_path):
     # check the errors for file type
     if isinstance(item_dict, dict) == False:
         raise TypeError("item_dict should be a dictionary.")
-    elif docx_template_path[-5:] != '.docx':
+    elif not docx_template_path.endswith('.docx'):
         raise TypeError("docx_template_path should be a docx file.")
-    elif new_docx_path[-5:] != '.docx':
+    elif not new_docx_path.endswith('.docx'):
         raise TypeError("new_docx_path should be a docx file.")
 
     # open the template docx
@@ -111,7 +111,7 @@ def convert_docx_pdf(docx_path, keep = True):
     """
 
     # check the errors for file type
-    if docx_path[-5:] != '.docx':
+    if not docx_path.endswith('.docx'):
         raise TypeError("docx_path should be a docx file.")
 
     # convert the docx to pdf

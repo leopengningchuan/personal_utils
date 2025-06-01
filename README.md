@@ -16,6 +16,7 @@ This project aims to provide a lightweight, reusable Python utility library to s
   - populate_docx_table()
   - populate_docx_paragraph()
   - convert_docx_pdf()
+  - merge_pdfs()
 - NOTE_AND_REFERENCE.md
 
 ## Instructions
@@ -36,6 +37,15 @@ To update the submodule to the latest version from its remote repository, run th
 ```bash
 git submodule update --remote --merge
 ```
+
+---
+
+### Package Used
+- `os`: for file path handling
+- `warnings`: for raising warnings
+- `docx`: for reading and editing Word docx files
+- `docx2pdf`: for converting Word docx files into PDF files
+- `PyPDF2`: for merging multiple PDF files into one
 
 ---
 
@@ -90,9 +100,27 @@ This function replaces placeholders in a Word docx document paragraph text using
 ### docx_manipulate.convert_docx_pdf
 This function converts a Word docx file to a PDF format. It requires the path to the input docx file and a Boolean flag indicating whether to keep the original file. By default, the original docx file is preserved after conversion. If set to `False`, the file will be deleted after the PDF is generated. The function performs basic input validation and uses the docx2pdf library to execute the conversion.
 
+---
+
+### docx_manipulate.merge_pdfs
+This function merges multiple PDF files into a single PDF file. It accepts either a list of PDF file paths or a folder containing PDF files, validates the input format and file types, and then combines the PDFs in the specified order. If a folder is provided, it filters out non-PDF files and optionally raises a warning. The merged output is saved to a user-defined path, and basic checks ensure the output file ends with `.pdf` and that the source files are valid.
+
+> [!CAUTION]  
+> DependencyError: PyCryptodome is required for AES algorithm
+
+This error means encrypted files require the `pycryptodome` library while working with PDFs (e.g., using `PyPDF2`). To resolve the dependency and allow the script to process encrypted PDFs properly, the required package can be installed by running:
+
+```python
+pip install pycryptodome
+```
+
 ## License
 This project is licensed under the MIT License - see the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/leopengningchuan/personal_utils?tab=MIT-1-ov-file) file for details.
 
 ## Acknowledgements
 - Thanks to Microsoft Word for providing a flexible document format that allows for easy templating.
-- Thanks to the Python community for the powerful libraries that made this project possible, including [`python-docx`](https://pypi.org/project/docx2pdf/) and [`openpyxl`](https://pypi.org/project/docx2pdf/).
+- Thanks to the Python community for the powerful libraries that made this project possible, including:
+  - [`python-docx`](https://pypi.org/project/docx2pdf/)
+  - [`openpyxl`](https://pypi.org/project/docx2pdf/)
+  - [`PyPDF2`](https://pypi.org/project/PyPDF2/)
+  - [`pycryptodome`](https://pypi.org/project/pycryptodome/)

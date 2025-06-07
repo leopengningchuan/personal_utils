@@ -11,7 +11,7 @@ Reusable Python utilities for file, text, and data tasks
   - [docx_manipulate.populate_docx_table](#docx_manipulatepopulate_docx_table)
   - [docx_manipulate.populate_docx_paragraph](#docx_manipulatepopulate_docx_paragraph)
   - [docx_manipulate.convert_docx_pdf](#docx_manipulateconvert_docx_pdf)
-  - [docx_manipulate.merge_pdfs](#docx_manipulatemerge_pdfs])
+  - [docx_manipulate.merge_pdfs](#docx_manipulatemerge_pdfs)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 

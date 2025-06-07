@@ -1,6 +1,20 @@
 # personal_utils
 Reusable Python utilities for file, text, and data tasks
 
+## Table of Contents
+- [Project Background](#project-background)
+- [Project Goal](#project-goal)
+- [File Structure](#file-structure)
+- [Instructions](#instructions)
+  - [Using the Utils](#using-the-utils)
+  - [Packages Used](#using-the-utils)
+  - [docx_manipulate.populate_docx_table](#docxmanipulatepopulatedocxtable)
+  - [docx_manipulate.populate_docx_paragraph](#docxmanipulatepopulatedocxparagraph)
+  - [docx_manipulate.convert_docx_pdf](#docxmanipulateconvertdocxpdf)
+  - [docx_manipulate.merge_pdfs](#docxmanipulatemergepdfs)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+
 ## Project Background
 In day-to-day Python development, it's common to write and reuse similar utility functions for tasks like file handling, string formatting, and data processing. Scattering these snippets across different projects can lead to duplication, inconsistency, and maintenance difficulties.
 
@@ -9,15 +23,17 @@ To address this, this repository was created as a personal centralized utility l
 ## Project Goal
 This project aims to provide a lightweight, reusable Python utility library to support automation, data processing, and scripting tasks across multiple projects with consistent and maintainable code.
 
-## Table of Contents
-- README.md
-- LICENSE.txt
-- docx_manipulate.py
-  - populate_docx_table()
-  - populate_docx_paragraph()
-  - convert_docx_pdf()
-  - merge_pdfs()
-- NOTE_AND_REFERENCE.md
+## File Structure
+- `README.md`
+- `LICENSE.txt`
+- `.gitignore`
+- `docx_manipulate.py`
+  - `populate_docx_table()`
+  - `populate_docx_paragraph()`
+  - `convert_docx_pdf()`
+  - `merge_pdfs()`
+- `bind_utils.sh`
+- `NOTE_AND_REFERENCE.md`
 
 ## Instructions
 
@@ -40,7 +56,7 @@ git submodule update --remote --merge
 
 ---
 
-### Package Used
+### Packages Used
 - `os`: for file path handling
 - `warnings`: for raising warnings
 - `docx`: for reading and editing Word docx files

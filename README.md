@@ -24,16 +24,13 @@ To address this, this repository was created as a personal centralized utility l
 This project aims to provide a lightweight, reusable Python utility library to support automation, data processing, and scripting tasks across multiple projects with consistent and maintainable code.
 
 ## File Structure
-- `README.md`
-- `LICENSE.txt`
-- `.gitignore`
-- `docx_manipulate.py`
-  - `populate_docx_table()`
-  - `populate_docx_paragraph()`
-  - `convert_docx_pdf()`
-  - `merge_pdfs()`
-- `bind_utils.sh`
-- `NOTE_AND_REFERENCE.md`
+- `README.md` – project overview
+- `LICENSE.txt` – license information
+- `.gitignore` – git ignore config
+- `.gitattributes` – git attributes config
+- `docx_manipulate.py` – word/pdf utility functions
+- `bind_utils.sh` – script to add utils submodule
+- `NOTE_AND_REFERENCE.md` – notes and references
 
 ## Instructions
 

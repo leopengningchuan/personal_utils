@@ -1,5 +1,7 @@
-import re
-import win32com.client as win32
+import re, os, platform
+
+if platform.system() == 'Windows':
+    import win32com.client as win32
 
 def is_valid_email(email_address):
     return re.match(r'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$', email_address) is not None

@@ -1,40 +1,104 @@
+# import the packages
 import re, os, platform
+from typing import Union, Optional
 
 if platform.system() == 'Windows':
     import win32com.client as win32
 
-def is_valid_email(email_address):
-    return re.match(r'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$', email_address) is not None
+
+# define the function of validating the email address
+def validate_email(email_address: str) -> bool:
+    """
+    Validates whether the input string is a properly formatted email address.
+
+    Parameters:
+        email_address (str): The email address to validate.
+
+    Returns:
+        bool: True if the email address is valid, False otherwise.
+
+    Raises:
+        TypeError: If the input type is invalid (sting for email address).
+    """
+    if isinstance(email_address, str) == False:
+        raise TypeError("email_address should be a string.")
+   
+    return re.match(r'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$', str(email_address)) is not None
 
 
-def is_valid_email_list(email_address_list):
-    if isinstance(email_address_list, str):
-        if not is_valid_email(email_address_list):
-            raise ValueError(f"Invalid email format: {email_address_list}")
-        return email_address_list
+# define the function of validating a single email address or a list of email addresses and return emails combined together
+def format_valid_emails(email_addresses: Union[str, list[str]]) -> str:
+    """
+    Validates a single email address or a list of email addresses and return adress combination.
+
+    Parameters:
+        email_address_list (str or list[str]): A single email address as a string, or a list of email addresses.
+
+    Returns:
+        str: A single valid email address, or a semicolon-separated string of valid email addresses.
+
+    Raises:
+        TypeError: If the input is neither a string nor a list.
+        ValueError: If any email in the input is not properly formatted.
+    """
+    
+    if not isinstance(email_addresses, (str, list)):
+        raise TypeError("email_address_list should be a string or a list.")
+    
+    elif isinstance(email_addresses, str):
+        if not validate_email(email_addresses):
+            raise ValueError(f"Invalid email format: {email_addresses}")
+        return email_addresses
             
-    elif isinstance(email_address_list, list):
-        for email_address in email_address_list:
-            if not is_valid_email(str(email_address)):
+    else:
+        for email_address in email_addresses:
+            if not validate_email(email_address):
                 raise ValueError(f"Invalid email format: {email_address}")
-        return ";".join(email_address_list)
+        return ";".join(email_addresses)
     
 
-def outlook_send_email(email_sender, email_receiver, email_subject, email_body, 
-                       email_attached = None, email_cc = None, email_bcc = None):
-    outlook = win32.Dispatch('outlook.application')
-    mail = outlook.CreateItem(0)
+def windows_outlook_send_email(
+        email_sender: str,
+        email_receiver: Union[str, list[str]],
+        email_subject: str,
+        email_body: str,
+        email_attached: Optional[Union[str, list[str]]] = None,
+        email_cc: Optional[Union[str, list[str]]] = None,
+        email_bcc: Optional[Union[str, list[str]]] = None
+) -> None:
+    
+    """
+    Send an email using Outlook via COM automation in Microsoft OS.
 
-    # check email address
+    Parameters:
+        email_sender (str): The email address to send on behalf of.
+        email_receiver (str or list[str]): One or more recipient email addresses.
+        email_subject (str): Subject line of the email.
+        email_body (str): Body text of the email.
+        email_attached (str or list[str], optional): Path(s) to file(s) to attach.
+        email_cc (str or list[str], optional): CC recipients.
+        email_bcc (str or list[str], optional): BCC recipients.
+
+    Raises:
+        ValueError: If email format is invalid.
+        FileNotFoundError: If attachment file(s) cannot be found.
+
+    Returns:
+        None
+    """
+    
+    mail = win32.Dispatch('outlook.application').CreateItem(0)
+
+    # check email addresses
     if not isinstance(email_sender, str):
         raise ValueError(f"Invalid email format: {email_sender}")
     else:
-        mail.SentOnBehalfOfName = is_valid_email_list(email_sender)
-    mail.To = is_valid_email_list(email_receiver)
+        mail.SentOnBehalfOfName = format_valid_emails(email_sender)
+    mail.To = format_valid_emails(email_receiver)
     if email_cc:
-        mail.CC = is_valid_email_list(email_cc)
+        mail.CC = format_valid_emails(email_cc)
     if email_bcc:
-        mail.BCC = is_valid_email_list(email_bcc)
+        mail.BCC = format_valid_emails(email_bcc)
 
     if email_attached:
         if isinstance(email_attached, list):

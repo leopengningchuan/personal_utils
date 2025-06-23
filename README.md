@@ -13,6 +13,10 @@ Reusable Python utilities for file, text, and data tasks
     - [populate_docx_paragraph](#populate_docx_paragraph)
     - [convert_docx_pdf](#convert_docx_pdf)
     - [merge_pdfs](#merge_pdfs)
+  - [email_related](#email_related)
+    - [validate_email](#validate_email)
+    - [format_valid_emails](#format_valid_emails)
+    - [windows_outlook_send_email](#windows_outlook_send_email)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
@@ -30,6 +34,7 @@ This project aims to provide a lightweight, reusable Python utility library to s
 - `.gitignore` – git ignore config
 - `.gitattributes` – git attributes config
 - `docx_manipulate.py` – word/pdf utility functions
+- `email_related.py` – email related utility functions
 - `bind_utils.sh` – script to add utils submodule
 - `NOTE_AND_REFERENCE.md` – notes and references
 
@@ -53,10 +58,11 @@ git submodule update --remote --merge
 ```
 
 ### Packages Used
-- `os`, `warnings`, `logging`, `typing`: core Python libraries for basic system operations
+- `os`, `warnings`, `logging`, `typing`, `platform`: core Python libraries for basic system operations
 - `docx`: for reading and editing DOCX files
 - `docx2pdf`: for converting DOCX files into PDF files
 - `PyPDF2`: for merging multiple PDF files into one
+- `win32com`: for Outlook email automation on Windows
 
 ### docx_manipulate
 
@@ -125,6 +131,23 @@ This error means encrypted files require the `pycryptodome` library while workin
 pip install pycryptodome
 ```
 
+---
+
+### email_related
+
+#### validate_email
+This function checks whether a given string is a valid email address using a regular expression. It ensures that the input matches a standard email format, including a username, the "@" symbol, a domain name, and a valid top-level domain. It returns `True` if the input is valid, otherwise `False`.
+
+---
+
+#### format_valid_emails
+This function validates and formats one or more email addresses. If a single valid email is provided as a string, it returns the string. If a list of valid email addresses is given, it checks each one and returns a semicolon-separated string of all valid entries. Raises a `ValueError` if any address is invalid.
+
+---
+
+#### windows_outlook_send_email
+This function automates the process of sending emails through the Windows Outlook desktop client using the `win32com.client` module. It supports multiple recipients in the To, CC, and BCC fields, and allows file attachments. All email addresses are validated and properly formatted before being passed to Outlook. The function checks for input validity, handles both single string and list input formats, and logs the result of the operation. Only works on Windows systems with Microsoft Outlook installed.
+
 ## License
 This project is licensed under the MIT License - see the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/leopengningchuan/personal_utils?tab=MIT-1-ov-file) file for details.
 
@@ -135,3 +158,4 @@ This project is licensed under the MIT License - see the [![License: MIT](https:
   - [`openpyxl`](https://pypi.org/project/docx2pdf/)
   - [`PyPDF2`](https://pypi.org/project/PyPDF2/)
   - [`pycryptodome`](https://pypi.org/project/pycryptodome/)
+  - [`pywin32`](https://pypi.org/project/pywin32/)

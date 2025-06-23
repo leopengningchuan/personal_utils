@@ -8,10 +8,11 @@ Reusable Python utilities for file, text, and data tasks
 - [Instructions](#instructions)
   - [Using the Utils](#using-the-utils)
   - [Packages Used](#packages-used)
-  - [docx_manipulate.populate_docx_table](#docx_manipulatepopulate_docx_table)
-  - [docx_manipulate.populate_docx_paragraph](#docx_manipulatepopulate_docx_paragraph)
-  - [docx_manipulate.convert_docx_pdf](#docx_manipulateconvert_docx_pdf)
-  - [docx_manipulate.merge_pdfs](#docx_manipulatemerge_pdfs)
+  - [docx_manipulate](#docx_manipulate)
+    - [populate_docx_table](#populate_docx_table)
+    - [populate_docx_paragraph](#populate_docx_paragraph)
+    - [convert_docx_pdf](#convert_docx_pdf)
+    - [merge_pdfs](#merge_pdfs)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
@@ -51,27 +52,24 @@ To update the submodule to the latest version from its remote repository, run th
 git submodule update --remote --merge
 ```
 
----
-
 ### Packages Used
-- `os`: for file path handling
-- `warnings`: for raising warnings
-- `docx`: for reading and editing Word docx files
-- `docx2pdf`: for converting Word docx files into PDF files
+- `os`, `warnings`, `logging`, `typing`: core Python libraries for basic system operations
+- `docx`: for reading and editing DOCX files
+- `docx2pdf`: for converting DOCX files into PDF files
 - `PyPDF2`: for merging multiple PDF files into one
 
----
+### docx_manipulate
 
-### docx_manipulate.populate_docx_table
-This function replaces placeholders in a Word docx document table using values from a Python dictionary. It requires three inputs: a dictionary with placeholder-value pairs, the path to a Word docx template, and the output path for the generated file. The function iterates through all table cells and replaces any exact matches with corresponding values from the dictionary. Only table content is affected — paragraph text outside tables will remain unchanged. Basic input validation is included to ensure file types and dictionary structure are correct.
+#### populate_docx_table
+This function replaces placeholders in a DOCX file table using values from a Python dictionary. It requires three inputs: a dictionary with placeholder-value pairs, the path to a DOCX template, and the output path for the generated file. The function iterates through all table cells and replaces any exact matches with corresponding values from the dictionary. Only table content is affected — paragraph text outside tables will remain unchanged. Basic input validation is included to ensure file types and dictionary structure are correct.
 
 > [!NOTE]  
-> Handling Placeholder Substitution Issues in Word Docx Template
+> Handling Placeholder Substitution Issues in DOCX Template
 
-When using Word docx templates, placeholders (e.g., `UNITPRICE1`) may not always be stored as a single contiguous string. Instead, Word docx templates can split them into multiple runs (e.g., `UNIT PRICE 1`), especially if the placeholder is manually typed letter-by-letter or if formatting changes occur mid-text. This makes accurate substitution difficult.
+When using DOCX templates, placeholders (e.g., `UNITPRICE1`) may not always be stored as a single contiguous string. Instead, DOCX templates can split them into multiple runs (e.g., `UNIT PRICE 1`), especially if the placeholder is manually typed letter-by-letter or if formatting changes occur mid-text. This makes accurate substitution difficult.
 
 To address this, there are two possible solutions:
-- Best Practice: Always paste the full placeholder (e.g., `UNITPRICE1`) into the Word docx template instead of typing it character by character. This helps Word docx templates treat it as a single run.
+- Best Practice: Always paste the full placeholder (e.g., `UNITPRICE1`) into the DOCX template instead of typing it character by character. This helps DOCX templates treat it as a single run.
 - Programmatic Workaround: Merge all runs in a paragraph into one string, perform substitutions on the combined text, and then rewrite the paragraph with the updated content. However, this method overwrites the original formatting of the paragraph.
 
 Here’s the code implementation of the workaround:
@@ -79,10 +77,10 @@ Here’s the code implementation of the workaround:
 ```python
 def populate_docx_table(item_dict, docx_template_path, new_docx_path):
 
-    # open the template docx
+    # open the template DOCX
     doc = Document(docx_template_path)
 
-    # replace the placeholder in the docx for all the invoices information
+    # replace the placeholder in the DOCX for all the invoices information
     for table in doc.tables:
         for row in table.rows:
             for cell in row.cells:
@@ -98,24 +96,24 @@ def populate_docx_table(item_dict, docx_template_path, new_docx_path):
                     para.clear()
                     para.add_run(full_text)
 
-    # save the docx to the docx path; print reminder
+    # save the DOCX to the new_docx_path; log reminder
     doc.save(new_docx_path)
-    print(f'---------- {new_docx_path} generated successfully.')
+    logging.info(f"DOCX generated — Path: {new_docx_path}")
 ```
 
 ---
 
-### docx_manipulate.populate_docx_paragraph
-This function replaces placeholders in a Word docx document paragraph text using values from a Python dictionary. It requires three inputs: a dictionary with placeholder-value pairs, the path to a Word docx template, and the output path for the generated file. The function iterates through all paragraphs and replaces any exact matches with corresponding values from the dictionary. Only paragraphs content is affected — tables will remain unchanged. Basic input validation is included to ensure file types and dictionary structure are correct.
+#### populate_docx_paragraph
+This function replaces placeholders in a DOCX file paragraph text using values from a Python dictionary. It requires three inputs: a dictionary with placeholder-value pairs, the path to a DOCX template, and the output path for the generated file. The function iterates through all paragraphs and replaces any exact matches with corresponding values from the dictionary. Only paragraphs content is affected — tables will remain unchanged. Basic input validation is included to ensure file types and dictionary structure are correct.
 
 ---
 
-### docx_manipulate.convert_docx_pdf
-This function converts a Word docx file to a PDF format. It requires the path to the input docx file and a Boolean flag indicating whether to keep the original file. By default, the original docx file is preserved after conversion. If set to `False`, the file will be deleted after the PDF is generated. The function performs basic input validation and uses the docx2pdf library to execute the conversion.
+#### convert_docx_pdf
+This function converts a DOCX file to a PDF format. It requires the path to the input DOCX file and a Boolean flag indicating whether to keep the original file. By default, the original DOCX file is preserved after conversion. If set to `False`, the file will be deleted after the PDF is generated. The function performs basic input validation and uses the `docx2pdf` library to execute the conversion.
 
 ---
 
-### docx_manipulate.merge_pdfs
+#### merge_pdfs
 This function merges multiple PDF files into a single PDF file. It accepts either a list of PDF file paths or a folder containing PDF files, validates the input format and file types, and then combines the PDFs in the specified order. If a folder is provided, it filters out non-PDF files and optionally raises a warning. The merged output is saved to a user-defined path, and basic checks ensure the output file ends with `.pdf` and that the source files are valid.
 
 > [!CAUTION]  

@@ -5,7 +5,6 @@ Curated resources and reusable utilities for general programming, documentation,
 - [Project Background](#project-background)
 - [Project Goal](#project-goal)
 - [Reference](#reference)
-- [Reference](#reference)
   - [Markdown Related](#markdown-related)
   - [GitHub & Version Control](#github--version-control)
 
@@ -14,6 +13,8 @@ This document collects essential tools, reference materials, and workflow notes 
 
 ## Project Goal
 To provide a centralized reference hub for commonly used techniques and websites across various programming languages and development environments.
+
+## Reference
 
 ### Markdown Related
 - [Markdown Guide: Basic Syntax](https://www.markdownguide.org/basic-syntax/) – Common formatting styles for Markdown documents.

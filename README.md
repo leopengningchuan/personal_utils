@@ -11,7 +11,7 @@ Reusable Python utilities for file, text, and data tasks
   - [docx_utils](#docx_utils)
     - [populate_docx_table](#populate_docx_table)
     - [populate_docx_paragraph](#populate_docx_paragraph)
-- [pdf_utils](#pdf_utils)
+  - [pdf_utils](#pdf_utils)
     - [convert_docx_pdf](#convert_docx_pdf)
     - [merge_pdfs](#merge_pdfs)
   - [email_utils](#email_utils)

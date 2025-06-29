@@ -8,12 +8,13 @@ Reusable Python utilities for file, text, and data tasks
 - [Instructions](#instructions)
   - [Using the Utils](#using-the-utils)
   - [Packages Used](#packages-used)
-  - [docx_manipulate](#docx_manipulate)
+  - [docx_utils](#docx_utils)
     - [populate_docx_table](#populate_docx_table)
     - [populate_docx_paragraph](#populate_docx_paragraph)
+- [pdf_utils](#pdf_utils)
     - [convert_docx_pdf](#convert_docx_pdf)
     - [merge_pdfs](#merge_pdfs)
-  - [email_related](#email_related)
+  - [email_utils](#email_utils)
     - [validate_email](#validate_email)
     - [format_valid_emails](#format_valid_emails)
     - [windows_outlook_send_email](#windows_outlook_send_email)
@@ -33,8 +34,9 @@ This project aims to provide a lightweight, reusable Python utility library to s
 - `LICENSE.txt` – license information
 - `.gitignore` – git ignore config
 - `.gitattributes` – git attributes config
-- `docx_manipulate.py` – word/pdf utility functions
-- `email_related.py` – email related utility functions
+- `docx_utils.py` – DOCX related utility functions
+- `pdf_utils.py` – PDF related utility functions
+- `email_utils.py` – email related utility functions
 - `bind_utils.sh` – script to add utils submodule
 - `NOTE_AND_REFERENCE.md` – notes and references
 
@@ -64,7 +66,7 @@ git submodule update --remote --merge
 - `PyPDF2`: for merging multiple PDF files into one
 - `win32com`: for Outlook email automation on Windows
 
-### docx_manipulate
+### docx_utils
 
 #### populate_docx_table
 This function replaces placeholders in a DOCX file table using values from a Python dictionary. It requires three inputs: a dictionary with placeholder-value pairs, the path to a DOCX template, and the output path for the generated file. The function iterates through all table cells and replaces any exact matches with corresponding values from the dictionary. Only table content is affected — paragraph text outside tables will remain unchanged. Basic input validation is included to ensure file types and dictionary structure are correct.
@@ -114,6 +116,8 @@ This function replaces placeholders in a DOCX file paragraph text using values f
 
 ---
 
+### pdf_utils
+
 #### convert_docx_pdf
 This function converts a DOCX file to a PDF format. It requires the path to the input DOCX file and a Boolean flag indicating whether to keep the original file. By default, the original DOCX file is preserved after conversion. If set to `False`, the file will be deleted after the PDF is generated. The function performs basic input validation and uses the `docx2pdf` library to execute the conversion.
 
@@ -133,7 +137,7 @@ pip install pycryptodome
 
 ---
 
-### email_related
+### email_utils
 
 #### validate_email
 This function checks whether a given string is a valid email address using a regular expression. It ensures that the input matches a standard email format, including a username, the "@" symbol, a domain name, and a valid top-level domain. It returns `True` if the input is valid, otherwise `False`.

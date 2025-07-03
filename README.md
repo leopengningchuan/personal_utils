@@ -158,8 +158,8 @@ This project is licensed under the MIT License - see the [![License: MIT](https:
 ## Acknowledgements
 - Thanks to Microsoft Word for providing a flexible document format that allows for easy templating.
 - Thanks to the Python community for the powerful libraries that made this project possible, including:
-  - [`python-docx`](https://pypi.org/project/docx2pdf/)
-  - [`openpyxl`](https://pypi.org/project/docx2pdf/)
+  - [`python-docx`](https://pypi.org/project/python-docx/)
+  - [`docx2pdf`](https://pypi.org/project/docx2pdf/)
   - [`PyPDF2`](https://pypi.org/project/PyPDF2/)
   - [`pycryptodome`](https://pypi.org/project/pycryptodome/)
   - [`pywin32`](https://pypi.org/project/pywin32/)

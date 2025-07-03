@@ -18,6 +18,7 @@ Reusable Python utilities for file, text, and data tasks
     - [validate_email](#validate_email)
     - [format_valid_emails](#format_valid_emails)
     - [windows_outlook_send_email](#windows_outlook_send_email)
+- [Note and Reference](#note_and_reference)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
@@ -30,14 +31,20 @@ To address this, this repository was created as a personal centralized utility l
 This project aims to provide a lightweight, reusable Python utility library to support automation, data processing, and scripting tasks across multiple projects with consistent and maintainable code.
 
 ## File Structure
+
+Configuration & Metadata:
 - `README.md` – project overview
 - `LICENSE.txt` – license information
 - `.gitignore` – git ignore config
 - `.gitattributes` – git attributes config
+
+Core Logic:
 - `docx_utils.py` – DOCX related utility functions
 - `pdf_utils.py` – PDF related utility functions
 - `email_utils.py` – email related utility functions
 - `bind_utils.sh` – script to add utils submodule
+
+Note & Reference:
 - `NOTE_AND_REFERENCE.md` – notes and references
 
 ## Instructions
@@ -151,6 +158,9 @@ This function validates and formats one or more email addresses. If a single val
 
 #### windows_outlook_send_email
 This function automates the process of sending emails through the Windows Outlook desktop client using the `win32com.client` module. It supports multiple recipients in the To, CC, and BCC fields, and allows file attachments. All email addresses are validated and properly formatted before being passed to Outlook. The function checks for input validity, handles both single string and list input formats, and logs the result of the operation. Only works on Windows systems with Microsoft Outlook installed.
+
+## Note and Reference
+See [NOTE_AND_REFERENCE.md](https://github.com/leopengningchuan/personal_utils/blob/main/NOTE_AND_REFERENCE.md) for curated resources and reusable utilities that support documentation and development workflows.
 
 ## License
 This project is licensed under the MIT License - see the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/leopengningchuan/personal_utils?tab=MIT-1-ov-file) file for details.

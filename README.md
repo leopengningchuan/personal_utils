@@ -19,8 +19,8 @@ Reusable Python utilities for file, text, and data tasks
     - [format_valid_emails](#format_valid_emails)
     - [windows_outlook_send_email](#windows_outlook_send_email)
 - [Note and Reference](#note_and_reference)
-- [License](#license)
 - [Acknowledgements](#acknowledgements)
+- [License](#license)
 
 ## Project Background
 In day-to-day Python development, it's common to write and reuse similar utility functions for tasks like file handling, string formatting, and data processing. Scattering these snippets across different projects can lead to duplication, inconsistency, and maintenance difficulties.
@@ -31,7 +31,6 @@ To address this, this repository was created as a personal centralized utility l
 This project aims to provide a lightweight, reusable Python utility library to support automation, data processing, and scripting tasks across multiple projects with consistent and maintainable code.
 
 ## File Structure
-
 Configuration & Metadata:
 - `README.md` – project overview
 - `LICENSE.txt` – license information
@@ -162,9 +161,6 @@ This function automates the process of sending emails through the Windows Outloo
 ## Note and Reference
 See [NOTE_AND_REFERENCE.md](https://github.com/leopengningchuan/personal_utils/blob/main/NOTE_AND_REFERENCE.md) for curated resources and reusable utilities that support documentation and development workflows.
 
-## License
-This project is licensed under the MIT License - see the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/leopengningchuan/personal_utils?tab=MIT-1-ov-file) file for details.
-
 ## Acknowledgements
 - Thanks to Microsoft Word for providing a flexible document format that allows for easy templating.
 - Thanks to the Python community for the powerful libraries that made this project possible, including:
@@ -173,3 +169,6 @@ This project is licensed under the MIT License - see the [![License: MIT](https:
   - [`PyPDF2`](https://pypi.org/project/PyPDF2/)
   - [`pycryptodome`](https://pypi.org/project/pycryptodome/)
   - [`pywin32`](https://pypi.org/project/pywin32/)
+
+## License
+This project is licensed under the MIT License - see the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/leopengningchuan/personal_utils?tab=MIT-1-ov-file) file for details.

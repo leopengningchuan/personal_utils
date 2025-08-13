@@ -22,8 +22,9 @@ To provide a centralized reference hub for commonly used techniques and websites
 - `LIMIT 1 OFFSET 1` – Skips the first row and returns the next one
 - `SUM(IF(flag = TRUE, 1, 0))` – Counts rows where flag is true by summing 1s and 0s
 - `OVER(ORDER BY visited_on ROWS BETWEEN 2 PRECEDING AND 1 FOLLOWING)` – Window function preceding and following data
-- `IFNULL(value, 0)` – Uses 0 to subustitute if the value is NULL
+- `IFNULL(value, 0)` – Uses 0 to substitute if the value is NULL
 - `POWER(value, 3)` & `SQRT(value)` – Returns the value raised to the 3rd power and the square root of the value
+- `LEAST(), GREATEST()`– Returns the minimal value or the maximal value
 - `DATEDIFF(DAY, start_date, end_date)` – Calculates the days between start_date and end_date
 - `TIMESTAMPDIFF(SECOND, start_timestamp, end_timestamp)`– Calculates the seconds between start_timestamp and end_timestamp
 - `DATE_ADD(date, INTERVAL 10 DAY)` – Gets the 10 days later of date

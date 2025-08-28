@@ -18,6 +18,8 @@ Reusable Python utilities for file, text, and data tasks
     - [validate_email](#validate_email)
     - [format_valid_emails](#format_valid_emails)
     - [windows_outlook_send_email](#windows_outlook_send_email)
+  - [google_api_utils](#google_api_utils)
+    - [gsheet_upload](#gsheet_upload)
 - [Note and Reference](#note_and_reference)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
@@ -41,6 +43,7 @@ Core Logic:
 - `docx_utils.py` – DOCX related utility functions
 - `pdf_utils.py` – PDF related utility functions
 - `email_utils.py` – email related utility functions
+- `google_api_utils.py` – Google API related utility functions
 - `bind_utils.sh` – script to add utils submodule
 
 Note & Reference:
@@ -71,6 +74,7 @@ git submodule update --remote --merge
 - `docx2pdf`: for converting DOCX files into PDF files
 - `PyPDF2`: for merging multiple PDF files into one
 - `win32com`: for Outlook email automation on Windows
+- `oauth2client`, `gspread`: for Google Sheet automation
 
 ### docx_utils
 
@@ -158,17 +162,33 @@ This function validates and formats one or more email addresses. If a single val
 #### windows_outlook_send_email
 This function automates the process of sending emails through the Windows Outlook desktop client using the `win32com.client` module. It supports multiple recipients in the To, CC, and BCC fields, and allows file attachments. All email addresses are validated and properly formatted before being passed to Outlook. The function checks for input validity, handles both single string and list input formats, and logs the result of the operation. Only works on Windows systems with Microsoft Outlook installed.
 
+---
+
+### google_api_utils
+
+#### gsheet_upload
+This function uploads a pandas DataFrame to Google Sheets. It opens the spreadsheet by ID, targets the specified worksheet by name (creating it if missing), clears existing values. Inputs are validated (credentials path, spreadsheet ID, worksheet name, DataFrame). The function logs the result of the operation. Requires Google Sheets API enabled and the sheet shared with the Service Account (Editor); works on Windows/macOS/Linux with network access.
+
+To enable the Google Sheet API and connect to the Google Sheet, you need to:
+1. Enable the *Google Sheets API* under *Google Cloud Console/APIs & Services/Library*.
+2. Create a *Service Accounts* under *APIs & Services/Credentials/Create credentials*. Note the generated service account email (e.g., `xxx@project.iam.gserviceaccount.com`).
+3. Create a JSON key under *Service Accounts/Keys/Add key/Create new key/JSON*. Download and save it as the Google Sheet credentials.
+4. In the target Google Sheet, click *Share*, add the service account email as *Editor*.
+
 ## Note and Reference
 See [NOTE_AND_REFERENCE.md](https://github.com/leopengningchuan/personal_utils/blob/main/NOTE_AND_REFERENCE.md) for curated resources and reusable utilities that support documentation and development workflows.
 
 ## Acknowledgements
-- Thanks to Microsoft Word for providing a flexible document format that allows for easy templating.
+- Thanks to [*Microsoft Word*](https://www.microsoft.com/en-us/microsoft-365) for providing a flexible document format that allows for easy templating.
+- Thanks to [*Google Sheet*](https://workspace.google.com/products/sheets/) for providing a flexible, cloud-based spreadsheet that allows for easy sharing and automation.
 - Thanks to the Python community for the powerful libraries that made this project possible, including:
   - [`python-docx`](https://pypi.org/project/python-docx/)
   - [`docx2pdf`](https://pypi.org/project/docx2pdf/)
   - [`PyPDF2`](https://pypi.org/project/PyPDF2/)
   - [`pycryptodome`](https://pypi.org/project/pycryptodome/)
   - [`pywin32`](https://pypi.org/project/pywin32/)
+  - [`oauth2client`](https://pypi.org/project/oauth2client/)
+  - [`gspread`](https://pypi.org/project/gspread/)
 
 ## License
 This project is licensed under the MIT License - see the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/leopengningchuan/personal_utils?tab=MIT-1-ov-file) file for details.

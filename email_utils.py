@@ -82,7 +82,6 @@ def windows_outlook_send_email(
         email_cc: Optional[Union[str, list[str]]] = None,
         email_bcc: Optional[Union[str, list[str]]] = None
 ) -> None:
-
     """
     Send an email using Outlook via COM automation in Windows operation system.
 

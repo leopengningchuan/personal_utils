@@ -188,7 +188,7 @@ See [NOTE_AND_REFERENCE.md](https://github.com/leopengningchuan/personal_utils/b
   - [`pycryptodome`](https://pypi.org/project/pycryptodome/)
   - [`pywin32`](https://pypi.org/project/pywin32/)
   - [`oauth2client`](https://pypi.org/project/oauth2client/)
-  - [`gspread.`](https://pypi.org/project/gspread/)
+  - [`gspread`](https://pypi.org/project/gspread/)
 
 ## License
 This project is licensed under the MIT License - see the [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/leopengningchuan/personal_utils?tab=MIT-1-ov-file) file for details.

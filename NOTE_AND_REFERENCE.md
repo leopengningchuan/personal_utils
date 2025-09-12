@@ -19,21 +19,37 @@ To provide a centralized reference hub for commonly used techniques and websites
 ## Note
 
 ### SQL Related
-- `LIMIT 1 OFFSET 1` – Skips the first row and returns the next one
-- `SUM(IF(flag = TRUE, 1, 0))` – Counts rows where flag is true by summing 1s and 0s
-- `OVER(ORDER BY visited_on ROWS BETWEEN 2 PRECEDING AND 1 FOLLOWING)` – Window function preceding and following data
-- `IFNULL(value, 0)` – Uses 0 to substitute if the value is NULL
-- `POWER(value, 3)` & `SQRT(value)` – Returns the value raised to the 3rd power and the square root of the value
-- `LEAST(), GREATEST()`– Returns the minimal value or the maximal value
-- `DATEDIFF(DAY, start_date, end_date)` – Calculates the days between start_date and end_date
-- `TIMESTAMPDIFF(SECOND, start_timestamp, end_timestamp)`– Calculates the seconds between start_timestamp and end_timestamp
-- `DATE_ADD(date, INTERVAL 10 DAY)` – Gets the 10 days later of date
-- `MONTHNAME(date)` & `DAYNAME(date)` – Gets the month name and day name of the date
-- `WEEKDAY(date)` – Gets the weekday index (0 = Monday, 6 = Sunday) for the date
-- `LEFT(date, 7)` – Gets the year and for the date
-- `REPLACE(col, ' ', '')` – Removes the space in the col
-- `SUBSTR("test_data", 5, 3)` – Returns a substring starting at position 5 with length 3
+General:
+- `LIMIT 1 OFFSET 1` – Skip the first row and returns the next one
+- `SUM(IF(flag_col = TRUE, 1, 0))` – Count rows where flag is true by summing 1s and 0s
+- `OVER(ORDER BY date_col ROWS BETWEEN 2 PRECEDING AND 1 FOLLOWING)` – Window function preceding and following data
 - `DELETE FROM table WHERE id IN ()` – Delete the rows in table where id meets the standard
+- `GROUP_CONCAT(str_col ORDERBY str_col SEPARATOR ', ')` – Group the string with separator
+- `CAST(str_col AS data_type)` – Change the coloumn data type
+
+Math related:
+- `IFNULL(num_col, 0)` – Use 0 to substitute if the value is NULL
+- `POWER(num_col, 3)` – Return the value raised to the 3rd power
+- `SQRT(num_col)` – Return the square root of the value
+- `LEAST(num_col), GREATEST(num_col)`– Return the minimal/maximal of the value
+- `FLOORT(num_col), CEIL(num_col)`– Return the largest/smallest integer value that is less/greater than or equal to the value
+
+Date and Time related
+- `DATEDIFF(DAY, start_date_col, end_date_col)` – Calculate the days between start_date and end_date
+- `TIMESTAMPDIFF(SECOND, start_timestamp_col, end_timestamp_col)`– Calculate the seconds between start_timestamp and end_timestamp
+- `DATE_ADD(date_col, INTERVAL 10 DAY)` – Get the 10 days later of date
+- `DATE_SUB(date_col, INTERVAL 10 MONTH)` – Get the 10 months later of date
+- `MONTHNAME(date_col)` – Get the month name of the date
+- `DAYNAME(date_col)` – Get the day name of the date
+- `WEEKDAY(date_col)` – Get the weekday index (0 = Monday, 6 = Sunday) for the date
+
+String related:
+- `LENGTH(str_col)` – Return the length of a string in bytes
+- `CHAR_LENGTH(str_col)` – Return the length of a string in characters
+- `LEFT(str_col, 7)` – Get the first 7 characters from left
+- `REPLACE(str_col, ' ', '')` – Remove the space in the col
+- `SUBSTR(str_col, 3, 4)` – Return a substring starting at position 5 with length 3
+- `REGEXP '^[a-zA-z][a-zA-z0-9._-]*@test\\.com$'` – Return a string follows the REGEX expression
 
 ## Reference
 

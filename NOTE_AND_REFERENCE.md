@@ -38,7 +38,7 @@ Date and Time related
 - `DATEDIFF(DAY, start_date_col, end_date_col)` – Calculate the days between start_date and end_date
 - `TIMESTAMPDIFF(SECOND, start_timestamp_col, end_timestamp_col)`– Calculate the seconds between start_timestamp and end_timestamp
 - `DATE_ADD(date_col, INTERVAL 10 DAY)` – Get the 10 days later of date
-- `DATE_SUB(date_col, INTERVAL 10 MONTH)` – Get the 10 months later of date
+- `DATE_SUB(date_col, INTERVAL 10 MONTH)` – Get the 10 months prior of date
 - `MONTHNAME(date_col)` – Get the month name of the date
 - `DAYNAME(date_col)` – Get the day name of the date
 - `WEEKDAY(date_col)` – Get the weekday index (0 = Monday, 6 = Sunday) for the date

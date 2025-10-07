@@ -12,9 +12,9 @@ logging.basicConfig(
 
 # define the function of adjusting the column format of the worksheet in the workbook
 def adjust_xlsx_columns(excel_path: str,
-                         worksheet_name: str, 
-                         col_num_format_list: Optional[Sequence[Tuple[Sequence[str], str]]] = None,
-                         group_col_list: Optional[Sequence[Tuple[str, str, bool]]] = None) -> None:
+                        worksheet_name: str, 
+                        col_num_format_list: Optional[Sequence[Tuple[Sequence[str], str]]] = None,
+                        group_col_list: Optional[Sequence[Tuple[str, str, bool]]] = None) -> None:
 
     """
     Adjust a XLSX file's column number format using the column and format list.

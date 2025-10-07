@@ -24,8 +24,8 @@ General:
 - `SUM(IF(flag_col = TRUE, 1, 0))` – Count rows where flag is true by summing 1s and 0s
 - `OVER(ORDER BY date_col ROWS BETWEEN 2 PRECEDING AND 1 FOLLOWING)` – Window function preceding and following data
 - `DELETE FROM table WHERE id IN ()` – Delete the rows in table where id meets the standard
-- `GROUP_CONCAT(str_col ORDERBY str_col SEPARATOR ', ')` – Group the string with separator
-- `CAST(str_col AS data_type)` – Change the coloumn data type
+- `GROUP_CONCAT(str_col ORDER BY str_col SEPARATOR ', ')` – Group the string with separator
+- `CAST(str_col AS data_type)` – Change the column data type
 
 Math related:
 - `IFNULL(num_col, 0)` – Use 0 to substitute if the value is NULL
@@ -42,6 +42,7 @@ Date and Time related
 - `MONTHNAME(date_col)` – Get the month name of the date
 - `DAYNAME(date_col)` – Get the day name of the date
 - `WEEKDAY(date_col)` – Get the weekday index (0 = Monday, 6 = Sunday) for the date
+- `WEEK(date_col)` – Get the week sequence of the year for the date
 
 String related:
 - `LENGTH(str_col)` – Return the length of a string in bytes

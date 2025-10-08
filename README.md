@@ -138,7 +138,7 @@ Here are some commonly used number format codes:
 - `0`: displays integers without decimals (e.g., 1)
 - `#,###.00`: displays numbers with thousand separators and exactly 2 decimal places (e.g., 1,234.56)
 - `'0.00%'`: displays values as percentages with 2 decimal places (e.g., 1.23%)
-- `u'_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'`: displays monetary values with thousand separators, 2 decimals, and aligns parentheses for negatives (e.g., $1,234.5)
+- `u'_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'`: displays monetary values with thousand separators, 2 decimals, and aligns parentheses for negatives (e.g., $1,234.56)
 
 ---
 

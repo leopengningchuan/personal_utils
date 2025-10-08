@@ -42,8 +42,14 @@ def adjust_xlsx_columns(excel_path: str,
         raise TypeError("group_col_list should be a list.")
     
     # open the workbook and worksheet
-    wb = openpyxl.load_workbook(excel_path)
-    ws = wb[worksheet_name]
+    try:
+        wb = openpyxl.load_workbook(excel_path)
+    except:
+        raise FileNotFoundError("Error: XLSX file not found or is not a valid XLSX file.")
+    try: 
+        ws = wb[worksheet_name]
+    except:
+        raise FileNotFoundError("Error: worksheet {worksheet_name} not found.")
 
     # for all the columns
     for col in ws.columns:
@@ -59,7 +65,6 @@ def adjust_xlsx_columns(excel_path: str,
                     max_length = max(max_length, len(str(cell.value)))
             except:
                 pass
-            
 
             # adjust the columns based on the column number format
             for col_num_format_group in col_num_format_list:
@@ -80,4 +85,4 @@ def adjust_xlsx_columns(excel_path: str,
 
     # save the workbook to the excel_path; log reminder
     wb.save(excel_path)
-    logging.info(f"XLSX adjusted — Path: {excel_path}")
+    logging.info(f"XLSX adjusted — Path: worksheet {worksheet_name} in {excel_path}")

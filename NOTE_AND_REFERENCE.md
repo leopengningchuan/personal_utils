@@ -43,6 +43,8 @@ Date and Time related
 - `DAYNAME(date_col)` – Get the day name of the date
 - `WEEKDAY(date_col)` – Get the weekday index (0 = Monday, 6 = Sunday) for the date
 - `WEEK(date_col)` – Get the week sequence of the year for the date
+- `TIME_FORMAT(timestamp_col, '%H:%i:%s')` – Return the timestamp based on the required time format
+- `SEC_TO_TIME(timestamp_col)` – Return the timestamp based on the specified seconds
 
 String related:
 - `LENGTH(str_col)` – Return the length of a string in bytes
@@ -50,7 +52,10 @@ String related:
 - `LEFT(str_col, 7)` – Get the first 7 characters from left
 - `REPLACE(str_col, ' ', '')` – Remove the space in the col
 - `SUBSTR(str_col, 3, 4)` – Return a substring starting at position 5 with length 3
+- `SUBSTRING_INDEX(str_col, '@', -1)` – Return a substring part after the last @
 - `REGEXP '^[a-zA-z][a-zA-z0-9._-]*@test\\.com$'` – Return a string follows the REGEX expression
+- `REGEXP_SUBSTR(str_col, '#[A-Za-z0-9_]+')'` – Return a string part that match the REGEX expression
+
 
 ## Reference
 

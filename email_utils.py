@@ -29,7 +29,7 @@ def validate_email(
     """
 
     # check the error for input type
-    if isinstance(email_address, str) == False:
+    if not isinstance(email_address, str):
         raise TypeError("email_address should be a string.")
 
     # return the result

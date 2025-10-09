@@ -37,7 +37,7 @@ def convert_docx_pdf(
     convert(docx_path)
 
     # remove the docx if needed; log reminder
-    if keep == False:
+    if not keep:
         os.remove(docx_path)
         logging.info(f"PDF generated (original DOCX removed) — Path: {docx_path}")
     else:

@@ -132,7 +132,7 @@ This function replaces placeholders in a DOCX file paragraph text using values f
 ### xlsx_utils
 
 #### adjust_xlsx_columns
-This function adjusts the column formatting of a worksheet in an XLSX file. It requires the path to the Excel file and the target worksheet name. Optional parameters allow you to specify a list of columns with custom number formats and group columns with hidden or visible states. The function also automatically resizes each column width to avoid compact strings from being truncated or hidden, ensuring that all cell content is properly displayed.
+This function adjusts the column formatting of a worksheet in an XLSX file. It requires the path to the Excel file and the target worksheet name. Optional parameters allow you to specify a list of columns with custom number formats and group columns with hidden or visible states. The function also automatically resizes each column width to avoid compact strings from being truncated or hidden, ensuring that all cell content is properly displayed. In addition, the function can highlight the cells to required colors.
 
 Here are some commonly used number format codes:
 - `0`: displays integers without decimals (e.g., 1)

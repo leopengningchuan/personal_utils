@@ -14,7 +14,8 @@ logging.basicConfig(
 def adjust_xlsx_columns(excel_path: str,
                         worksheet_name: str, 
                         col_num_format_list: Optional[Sequence[Tuple[Sequence[str], str]]] = None,
-                        group_col_list: Optional[Sequence[Tuple[str, str, bool]]] = None) -> None:
+                        group_col_list: Optional[Sequence[Tuple[str, str, bool]]] = None,
+                        cell_color_list: Optional[Sequence[Tuple[str, str]]] = None) -> None:
 
     """
     Adjust a XLSX file's column number format using the column and format list.
@@ -24,6 +25,7 @@ def adjust_xlsx_columns(excel_path: str,
         worksheet_name (str): Excel worksheet name.
         col_num_format_list (list): list of columns need to be change number format.
         group_col_list (list): list of columns need to be grouped.
+        cell_color_list (list): list of cells need to be colored.
 
     Returns:
         None
@@ -36,10 +38,14 @@ def adjust_xlsx_columns(excel_path: str,
     # check the errors for file type
     if not excel_path.endswith('.xlsx'):
         raise TypeError("excel_path should be a xlsx file.")
-    elif isinstance(col_num_format_list, list) == False:
+    elif not isinstance(worksheet_name, str):
+        raise TypeError("worksheet_name should be a string.")
+    elif col_num_format_list is not None and not isinstance(col_num_format_list, Sequence):
         raise TypeError("col_num_format_list should be a list.")
-    elif isinstance(group_col_list, list) == False:
+    elif group_col_list is not None and not isinstance(group_col_list, Sequence):
         raise TypeError("group_col_list should be a list.")
+    elif cell_color_list is not None and not isinstance(cell_color_list, Sequence):
+        raise TypeError("cell_color_list should be a list.")
     
     # open the workbook and worksheet
     try:
@@ -82,6 +88,14 @@ def adjust_xlsx_columns(excel_path: str,
         for grp in group_col_list:
             start, end, hidden = grp
             ws.column_dimensions.group(start = start, end = end, hidden = hidden)
+
+    # add color for cells
+    if cell_color_list:
+        for grp in cell_color_list:
+            cells, color = grp
+            for row in ws[cells]:
+                for col in row:
+                    col.fill = openpyxl.styles.PatternFill(start_color = color, end_color = color, fill_type = "solid")
 
     # save the workbook to the excel_path; log reminder
     wb.save(excel_path)

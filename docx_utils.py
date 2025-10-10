@@ -33,7 +33,7 @@ def populate_docx_table(
     """
 
     # check the errors for file type
-    if isinstance(item_dict, dict) == False:
+    if not isinstance(item_dict, dict):
         raise TypeError("item_dict should be a dictionary.")
     elif not docx_template_path.endswith('.docx'):
         raise TypeError("docx_template_path should be a DOCX file.")
@@ -83,7 +83,7 @@ def populate_docx_paragraph(
     """
 
     # check the errors for file type
-    if isinstance(item_dict, dict) == False:
+    if not isinstance(item_dict, dict):
         raise TypeError("item_dict should be a dictionary.")
     elif not docx_template_path.endswith('.docx'):
         raise TypeError("docx_template_path should be a DOCX file.")

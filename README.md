@@ -11,6 +11,8 @@ Reusable Python utilities for file, text, and data tasks
   - [docx_utils](#docx_utils)
     - [populate_docx_table](#populate_docx_table)
     - [populate_docx_paragraph](#populate_docx_paragraph)
+  - [xlsx_utils](#xlsx_utils)
+    - [adjust_xlsx_columns](#adjust_xlsx_columns)
   - [pdf_utils](#pdf_utils)
     - [convert_docx_pdf](#convert_docx_pdf)
     - [merge_pdfs](#merge_pdfs)
@@ -41,6 +43,7 @@ Configuration & Metadata:
 
 Core Logic:
 - `docx_utils.py` – DOCX related utility functions
+- `xlsx_utils.py` – XLSX related utility functions
 - `pdf_utils.py` – PDF related utility functions
 - `email_utils.py` – email related utility functions
 - `google_api_utils.py` – Google API related utility functions
@@ -126,6 +129,19 @@ This function replaces placeholders in a DOCX file paragraph text using values f
 
 ---
 
+### xlsx_utils
+
+#### adjust_xlsx_columns
+This function adjusts the column formatting of a worksheet in an XLSX file. It requires the path to the Excel file and the target worksheet name. Optional parameters allow you to specify a list of columns with custom number formats and group columns with hidden or visible states. The function also automatically resizes each column width to avoid compact strings from being truncated or hidden, ensuring that all cell content is properly displayed. In addition, the function can highlight the cells to required colors.
+
+Here are some commonly used number format codes:
+- `0`: displays integers without decimals (e.g., 1)
+- `#,###.00`: displays numbers with thousand separators and exactly 2 decimal places (e.g., 1,234.56)
+- `'0.00%'`: displays values as percentages with 2 decimal places (e.g., 1.23%)
+- `u'_($* #,##0.00_);_($* (#,##0.00);_($* "-"??_);_(@_)'`: displays monetary values with thousand separators, 2 decimals, and aligns parentheses for negatives (e.g., $1,234.56)
+
+---
+
 ### pdf_utils
 
 #### convert_docx_pdf
@@ -184,6 +200,7 @@ See [NOTE_AND_REFERENCE.md](https://github.com/leopengningchuan/personal_utils/b
 - Thanks to the Python community for the powerful libraries that made this project possible, including:
   - [`python-docx`](https://pypi.org/project/python-docx/)
   - [`docx2pdf`](https://pypi.org/project/docx2pdf/)
+  - [`openpyxl`](https://pypi.org/project/openpyxl/)
   - [`PyPDF2`](https://pypi.org/project/PyPDF2/)
   - [`pycryptodome`](https://pypi.org/project/pycryptodome/)
   - [`pywin32`](https://pypi.org/project/pywin32/)

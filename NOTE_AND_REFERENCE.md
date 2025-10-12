@@ -24,8 +24,8 @@ General:
 - `SUM(IF(flag_col = TRUE, 1, 0))` – Count rows where flag is true by summing 1s and 0s
 - `OVER(ORDER BY date_col ROWS BETWEEN 2 PRECEDING AND 1 FOLLOWING)` – Window function preceding and following data
 - `DELETE FROM table WHERE id IN ()` – Delete the rows in table where id meets the standard
-- `GROUP_CONCAT(str_col ORDER BY str_col SEPARATOR ', ')` – Group the string with separator
 - `CAST(str_col AS data_type)` – Change the column data type
+- `BIT_AND() / BIT_OR()` – Perform logical operations on the corresponding bits of two integers
 
 Math related:
 - `IFNULL(num_col, 0)` – Use 0 to substitute if the value is NULL
@@ -50,11 +50,13 @@ String related:
 - `LENGTH(str_col)` – Return the length of a string in bytes
 - `CHAR_LENGTH(str_col)` – Return the length of a string in characters
 - `LEFT(str_col, 7)` – Get the first 7 characters from left
+- `GROUP_CONCAT(str_col ORDER BY str_col SEPARATOR ', ')` – Group the string with separator
 - `REPLACE(str_col, ' ', '')` – Remove the space in the col
 - `SUBSTR(str_col, 3, 4)` – Return a substring starting at position 5 with length 3
 - `SUBSTRING_INDEX(str_col, '@', -1)` – Return a substring part after the last @
 - `REGEXP '^[a-zA-z][a-zA-z0-9._-]*@test\\.com$'` – Return a string follows the REGEX expression
 - `REGEXP_SUBSTR(str_col, '#[A-Za-z0-9_]+')'` – Return a string part that match the REGEX expression
+- `str_col LIKE '@%_'` – Return a string that follows the pattern (`%` represents zero, one, or multiple characters; `_` represents one, single character)
 
 
 ## Reference

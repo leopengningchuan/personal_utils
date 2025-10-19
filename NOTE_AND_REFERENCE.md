@@ -45,6 +45,8 @@ Date and Time related
 - `WEEK(date_col)` – Get the week sequence of the year for the date
 - `TIME_FORMAT(timestamp_col, '%H:%i:%s')` – Return the timestamp based on the required time format
 - `SEC_TO_TIME(timestamp_col)` – Return the timestamp based on the specified seconds
+- `TIME(timestamp_col) BETWEEN '11:00:00' AND '14:00:00'` – Return the timestamp in the required range
+
 
 String related:
 - `LENGTH(str_col)` – Return the length of a string in bytes

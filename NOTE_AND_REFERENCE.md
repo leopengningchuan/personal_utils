@@ -47,7 +47,6 @@ Date and Time related
 - `SEC_TO_TIME(timestamp_col)` – Return the timestamp based on the specified seconds
 - `TIME(timestamp_col) BETWEEN '11:00:00' AND '14:00:00'` – Return the timestamp in the required range
 
-
 String related:
 - `LENGTH(str_col)` – Return the length of a string in bytes
 - `CHAR_LENGTH(str_col)` – Return the length of a string in characters
@@ -60,6 +59,41 @@ String related:
 - `REGEXP_SUBSTR(str_col, '#[A-Za-z0-9_]+')'` – Return a string part that match the REGEX expression
 - `str_col LIKE '@%_'` – Return a string that follows the pattern (`%` represents zero, one, or multiple characters; `_` represents one, single character)
 
+
+### Statistics Related
+
+### Model Related
+
+#### Linear Regression
+Definition: Linear regression is a regression model that assumes a linear relationship between the independent variables and the single dependent variable.
+
+Assumptions: 
+1. There is a linear relationship between the dependent variables and the independent variables, meaning the model you are creating actually fits the data;
+2. The residuals errors of the data are normally distributed and independent from each other;
+3. There is minimal multicollinearity between independent variables;
+4. Homoscedasticity: variance of error terms is the same for all values of x.
+
+Drawbacks:
+1. Strong assumptions that may not be true in application;
+2. Cannot be used in discrete or binary outcome;
+3. Cannot vary the model flexibility;
+4. Very non robust.
+
+Linear Regression Solution: Minimize residual sum of squares (RSS), $R^2 = 1-RSS/TSS$
+Total sum of squares (TSS) = Explained sum of squares (ESS) + Residual sum of squares (RSS)
+
+RMSE, Root Mean Square Error, is the standard deviation of the residuals. Residuals are a measure of how far from the regression line data points are; RMSE is a measure of how spread out these residuals are.
+```math
+RMSE = sqrt{RSS/n}
+```
+
+R2, R square, is a statistical measure that represents the proportion of the variance for a dependent variable that's explained by the independent variables in a regression model. R2 can have a negative value when the model selected does not follow the trend of the data.
+
+Adj R2 is a modified version of R2 which takes n (number of observations) and k (number of independent variables) into account. It can be used to compare models that have a different number of variables. Adj R2 is always lower than R2.
+
+
+#### Logistic Regression
+Logistic Regression is a classification model which uses the logit model to predict the binary outcome of dependent variable from a linear combination of independent variables.
 
 ## Reference
 

@@ -7,8 +7,13 @@ Curated resources and reusable utilities for general programming, documentation,
 - [Note](#note)
   - [SQL Syntax Related](#sql-syntax-related)
   - [Statistics Related](#statistics-related)
+    - [Confusion Matrix](#confusion-matrix)
   - [Model Related](#model-related)
     - [Linear Regression](#linear-regression)
+    - [Logistic Regression](#logistics-regression)
+    - [K-Nearest Neighbors](#k-nearest-neighbors)
+    - [Decision Tree](#decision-tree)
+    - [Random Forest](#random-forest)
 - [Reference](#reference)
   - [Markdown Related](#markdown-related)
   - [GitHub & Version Control](#github--version-control)
@@ -65,10 +70,27 @@ String related:
 
 ### Statistics Related
 
+#### Confusion Matrix
+
+| Actual/Predict | 1              | 0              |
+|----------------|:--------------:|---------------:|
+| 1              | True Positive  | False Negtaive |
+| 0              | False Positive | True Negtaive  |
+
+- Type I Error: False Positive				
+- Type II Error: False Negative
+- $Accuracy = \frac{TP+TN}{P+N}$
+- $Error Rate = \frac{FP+FN}{P+N}$			
+- True Positive Rate/Recall (Higher sensitivity → lower Type II error): $Sensitivity = \frac{TP}{TP+FN}$	  
+- True Negative Rate (Higher specificity → lower Type I error): $Specificity = \frac{TN}{TN+FP}$	  
+- Positive Predicted Value: $Precision = \frac{TP}{TP+FP}$	
+- $F Score = \frac{2}{\frac{1}{Recall}+\frac{1}{Precision}} = \frac{2TP}{2TP+FP+FN}$
+
+
 ### Model Related
 
 #### Linear Regression
-*Definition*: 
+*Definition*:   
 Linear regression is a regression model that assumes a linear relationship between the independent variables and the single dependent variable.
 
 $$y_i = \beta_0 + \beta_1 x_{i1} + \dots + \beta_p x_{ip} + \varepsilon_i$$
@@ -85,24 +107,70 @@ $$y_i = \beta_0 + \beta_1 x_{i1} + \dots + \beta_p x_{ip} + \varepsilon_i$$
 3. Cannot vary the model flexibility;
 4. Very non robust.
 
-*RMSE, RSS, R2 & Adj R2*:
-Linear Regression Solution: Minimize residual sum of squares (RSS), $R^2 = 1-RSS/TSS$
+*RMSE, RSS, R2 & Adj R2*:   
+Linear Regression Solution: Minimize residual sum of squares (RSS), $R^2 = 1-\frac{RSS}{TSS}$
 Total sum of squares (TSS) = Explained sum of squares (ESS) + Residual sum of squares (RSS)
 
 RMSE, Root Mean Square Error, is the standard deviation of the residuals. Residuals are a measure of how far from the regression line data points are; RMSE is a measure of how spread out these residuals are.
 
-```math
-RMSE = \sqrt{RSS/n}
-```
+$$RMSE = \sqrt{\frac{RSS}{n}} $$
 
-R2, R square, is a statistical measure that represents the proportion of the variance for a dependent variable that's explained by the independent variables in a regression model. R2 can have a negative value when the model selected does not follow the trend of the data.
+$R^2$ is a statistical measure that represents the proportion of the variance for a dependent variable that's explained by the independent variables in a regression model. R2 can have a negative value when the model selected does not follow the trend of the data.
 
-Adj R2 is a modified version of R2 which takes n (number of observations) and k (number of independent variables) into account. It can be used to compare models that have a different number of variables. Adj R2 is always lower than R2.
+$R_Adj^2$ is a modified version of R2 which takes n (number of observations) and k (number of independent variables) into account. It can be used to compare models that have a different number of variables. $R_Adj^2$ is always lower than $R^2$.
 
-$$Adj_R^2 = 1 - (1 - R^2)\frac{n - 1}{n - k - 1}$$
+$$R_Adj^2 = 1 - (1 - R^2)\frac{n - 1}{n - k - 1}$$
+
 
 #### Logistic Regression
+*Definition*:   
 Logistic Regression is a classification model which uses the logit model to predict the binary outcome of dependent variable from a linear combination of independent variables.
+
+$$P(Y=1 \mid X=x) = \frac{e^{\beta_0 + \beta_1 x}}{1 + e^{\beta_0 + \beta_1 x}}$$
+or
+$$\log \frac{P(Y=1 \mid X=x)}{P(Y=0 \mid X=x)} = \beta_0 + \beta_1 x$$
+
+*Maximum likelihood approach*:   
+The logit of the estimated probability response is a linear function of the predictor parameters.
+
+$$\text{Log-likelihood: } \ell(\boldsymbol{\beta}) = \sum_{i=1}^n \Big[ y_i \log p_i + (1 - y_i)\log(1 - p_i) \Big], \quad p_i = \sigma(\mathbf{x}_i^\top \boldsymbol{\beta}) = \frac{1}{1 + e^{-\mathbf{x}_i^\top \boldsymbol{\beta}}}$$
+
+
+#### K-Nearest Neighbors
+*Definition*:   
+KNN is a model that classifies data points based on the points that are most similar to it.
+
+*Process*:   
+To predict the class label for a new observation `X = x`, find the `K` training points closest to `x`, then assign `x` to the class that appears most often among those neighbors. Distance is measured with the Euclidean metric rather than Manhattan, since Euclidean captures straight‑line proximity instead of only horizontal/vertical steps.
+
+
+#### Decision Tree
+*Definition*:   
+A decision tree is a supervised machine learning algorithm used for both classification and regression. It recursively partitions the predictor space into smaller, homogeneous regions and makes predictions using the mean (regression) or mode (classification) of the training samples in each region.
+
+*Process*:   
+1. At each node, the algorithm searches for the best split (cut point) that minimizes impurity (e.g., Gini index, entropy, RSS).
+2. The process repeats recursively, creating a tree structure.
+3. Pruning is used to reduce overfitting by removing branches that add little predictive power.
+
+*Advantages*: 
+1. Easy to interpret and visualize graphically;
+2. Works well when the true decision boundary aligns with axis-parallel splits;
+3. Easily handle qualitative predictors without the need to create dummy variables.
+
+*Disadvantages*: 
+1. Performs poorly when boundaries are diagonal or highly curved;
+2. Unstable to small changes in data (high variance) without pruning; can overfit without regularization.
+
+
+#### Random Forest
+*Definition*:   
+A random forest is an ensemble learning method that builds multiple randomized decision trees and aggregates their predictions (via averaging for regression or majority vote for classification). By combining many weakly correlated trees, random forest significantly reduces variance compared with a single decision tree.
+
+*Sources of Randomness*:   
+- Bootstrapped sampling (bagging): each tree is trained on a random sample of the training data.
+- Feature randomness: each split considers a random subset of features, encouraging tree diversity.
+
 
 ## Reference
 

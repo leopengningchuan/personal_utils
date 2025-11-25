@@ -5,7 +5,10 @@ Curated resources and reusable utilities for general programming, documentation,
 - [Project Background](#project-background)
 - [Project Goal](#project-goal)
 - [Note](#note)
-  - [SQL Related](#sql-related)
+  - [SQL Syntax Related](#sql-syntax-related)
+  - [Statistics Related](#statistics-related)
+  - [Model Related](#model-related)
+    - [Linear Regression](#linear-regression)
 - [Reference](#reference)
   - [Markdown Related](#markdown-related)
   - [GitHub & Version Control](#github--version-control)
@@ -18,7 +21,7 @@ To provide a centralized reference hub for commonly used techniques and websites
 
 ## Note
 
-### SQL Related
+### SQL Syntax Related
 General:
 - `LIMIT 1 OFFSET 1` – Skip the first row and returns the next one
 - `SUM(IF(flag_col = TRUE, 1, 0))` – Count rows where flag is true by summing 1s and 0s
@@ -65,32 +68,38 @@ String related:
 ### Model Related
 
 #### Linear Regression
-Definition: Linear regression is a regression model that assumes a linear relationship between the independent variables and the single dependent variable.
+*Definition*: 
+Linear regression is a regression model that assumes a linear relationship between the independent variables and the single dependent variable.
 
-Assumptions: 
+$$y_i = \beta_0 + \beta_1 x_{i1} + \dots + \beta_p x_{ip} + \varepsilon_i$$
+
+*Assumptions*: 
 1. There is a linear relationship between the dependent variables and the independent variables, meaning the model you are creating actually fits the data;
 2. The residuals errors of the data are normally distributed and independent from each other;
 3. There is minimal multicollinearity between independent variables;
 4. Homoscedasticity: variance of error terms is the same for all values of x.
 
-Drawbacks:
+*Drawbacks*:
 1. Strong assumptions that may not be true in application;
 2. Cannot be used in discrete or binary outcome;
 3. Cannot vary the model flexibility;
 4. Very non robust.
 
+*RMSE, RSS, R2 & Adj R2*:
 Linear Regression Solution: Minimize residual sum of squares (RSS), $R^2 = 1-RSS/TSS$
 Total sum of squares (TSS) = Explained sum of squares (ESS) + Residual sum of squares (RSS)
 
 RMSE, Root Mean Square Error, is the standard deviation of the residuals. Residuals are a measure of how far from the regression line data points are; RMSE is a measure of how spread out these residuals are.
+
 ```math
-RMSE = sqrt{RSS/n}
+RMSE = \sqrt{RSS/n}
 ```
 
 R2, R square, is a statistical measure that represents the proportion of the variance for a dependent variable that's explained by the independent variables in a regression model. R2 can have a negative value when the model selected does not follow the trend of the data.
 
 Adj R2 is a modified version of R2 which takes n (number of observations) and k (number of independent variables) into account. It can be used to compare models that have a different number of variables. Adj R2 is always lower than R2.
 
+$$Adj_R^2 = 1 - (1 - R^2)\frac{n - 1}{n - k - 1}$$
 
 #### Logistic Regression
 Logistic Regression is a classification model which uses the logit model to predict the binary outcome of dependent variable from a linear combination of independent variables.

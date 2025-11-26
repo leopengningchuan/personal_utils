@@ -11,6 +11,8 @@ Curated resources and reusable utilities for general programming, documentation,
   - [Model Related](#model-related)
     - [Linear Regression](#linear-regression)
     - [Logistic Regression](#logistics-regression)
+    - [Linear Discriminant Analysis](#linear-discriminant-analysis)
+    - [Support Vector Machine](#support-vector-machine)
     - [K-Nearest Neighbors](#k-nearest-neighbors)
     - [Decision Tree](#decision-tree)
     - [Random Forest](#random-forest)
@@ -134,6 +136,28 @@ $$\log \frac{P(Y=1 \mid X=x)}{P(Y=0 \mid X=x)} = \beta_0 + \beta_1 x$$
 The logit of the estimated probability response is a linear function of the predictor parameters.
 
 $$\text{Log-likelihood: } \ell(\boldsymbol{\beta}) = \sum_{i=1}^n \Big[ y_i \log p_i + (1 - y_i)\log(1 - p_i) \Big], \quad p_i = \sigma(\mathbf{x}_i^\top \boldsymbol{\beta}) = \frac{1}{1 + e^{-\mathbf{x}_i^\top \boldsymbol{\beta}}}$$
+
+
+#### Linear Discriminant Analysis
+*Definition*:   
+LDA is a classification method that seeks a linear combination of features that best separates the classes. It does so by maximizing between-class variance while minimizing within-class variance, effectively projecting the data onto a direction that best discriminates the groups.
+
+LDA assumes that the feature vectors follow class-conditional multivariate normal distributions with shared covariance:
+
+$$X \mid Y = k \sim N(\mu_k, \Sigma)$$
+
+Under this assumption, LDA produces a linear decision boundary.
+
+QDA (Quadratic Discriminant Analysis) extends LDA by allowing each class to have its own covariance matrix, resulting in non-linear (quadratic) boundaries.
+
+Both LDA and QDA perform best when the classes are reasonably separable and the multivariate normality assumption approximately holds.
+
+
+#### Support Vector Machine
+*Definition*:   
+SVM is a classification/regression model that aims to find the best boundary to separate different classes. 
+
+It does this by choosing a decision hyperplane that maximizes the margin to the closest data points, and when the data are not linearly separable, the kernel trick maps them into a higher-dimensional space where a linear separator becomes possible.
 
 
 #### K-Nearest Neighbors

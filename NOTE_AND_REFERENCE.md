@@ -16,6 +16,8 @@ Curated resources and reusable utilities for general programming, documentation,
     - [K-Nearest Neighbors](#k-nearest-neighbors)
     - [Decision Tree](#decision-tree)
     - [Random Forest](#random-forest)
+    - [K-Means Clustering](#k-means-clustering)
+    - [Hierarchical Clustering](#hierarchical-clustering)
 - [Reference](#reference)
   - [Markdown Related](#markdown-related)
   - [GitHub & Version Control](#github--version-control)
@@ -123,6 +125,7 @@ $R_Adj^2$ is a modified version of R2 which takes n (number of observations) and
 
 $$R_Adj^2 = 1 - (1 - R^2)\frac{n - 1}{n - k - 1}$$
 
+---
 
 #### Logistic Regression
 *Definition*:   
@@ -137,6 +140,7 @@ The logit of the estimated probability response is a linear function of the pred
 
 $$\text{Log-likelihood: } \ell(\boldsymbol{\beta}) = \sum_{i=1}^n \Big[ y_i \log p_i + (1 - y_i)\log(1 - p_i) \Big], \quad p_i = \sigma(\mathbf{x}_i^\top \boldsymbol{\beta}) = \frac{1}{1 + e^{-\mathbf{x}_i^\top \boldsymbol{\beta}}}$$
 
+---
 
 #### Linear Discriminant Analysis
 *Definition*:   
@@ -152,6 +156,7 @@ QDA (Quadratic Discriminant Analysis) extends LDA by allowing each class to have
 
 Both LDA and QDA perform best when the classes are reasonably separable and the multivariate normality assumption approximately holds.
 
+---
 
 #### Support Vector Machine
 *Definition*:   
@@ -159,6 +164,7 @@ SVM is a classification/regression model that aims to find the best boundary to 
 
 It does this by choosing a decision hyperplane that maximizes the margin to the closest data points, and when the data are not linearly separable, the kernel trick maps them into a higher-dimensional space where a linear separator becomes possible.
 
+---
 
 #### K-Nearest Neighbors
 *Definition*:   
@@ -167,6 +173,7 @@ KNN is a model that classifies data points based on the points that are most sim
 *Process*:   
 To predict the class label for a new observation `X = x`, find the `K` training points closest to `x`, then assign `x` to the class that appears most often among those neighbors. Distance is measured with the Euclidean metric rather than Manhattan, since Euclidean captures straight‑line proximity instead of only horizontal/vertical steps.
 
+---
 
 #### Decision Tree
 *Definition*:   
@@ -186,6 +193,7 @@ A decision tree is a supervised machine learning algorithm used for both classif
 1. Performs poorly when boundaries are diagonal or highly curved;
 2. Unstable to small changes in data (high variance) without pruning; can overfit without regularization.
 
+---
 
 #### Random Forest
 *Definition*:   
@@ -195,6 +203,45 @@ A random forest is an ensemble learning method that builds multiple randomized d
 - Bootstrapped sampling (bagging): each tree is trained on a random sample of the training data.
 - Feature randomness: each split considers a random subset of features, encouraging tree diversity.
 
+---
+
+#### K-Means Clustering
+*Definition*:   
+K-Means is an unsupervised clustering algorithm that partitions n observations into k clusters. Each observation is assigned to the cluster with the nearest centroid, and the centroids are updated iteratively to minimize within-cluster variation.
+
+*Elbow Method*:   
+To determine an appropriate value of k, the elbow method plots:
+- x-axis: number of clusters k
+- y-axis: WCSS (Within-Cluster Sum of Squares), the sum of squared distances from each point to its cluster centroid
+As k increases, WCSS decreases.
+
+*Random Initialization*:   
+Because K-Means is sensitive to the initial placement of centroids, the algorithm should be run multiple times with different random initializations. The best solution (lowest WCSS) is chosen to avoid poor local minima.
+
+*Advantages*: 
+1. Computationally efficient, scales well to large datasets;
+2. Few parameters, easy to understand;
+3. Works well when clusters are spherical and well-separated;
+4. Efficient memory usage
+
+*Disadvantages*: 
+1. Requires specifying the number of clusters k beforehand;
+2. Different random seeds may lead to different results (local minima);
+3. Performs poorly on non-globular or complex-shaped clusters;
+4. Features with larger ranges dominate distance calculations unless standardized;
+5. A single outlier can heavily distort cluster centroids.
+
+---
+
+#### Hierarchical Clustering
+*Definition*:   
+Hierarchical clustering is an unsupervised learning method that groups observations based on a measure of similarity.
+Instead of specifying the number of clusters in advance, the algorithm builds a hierarchy of clusters that can be visualized as a dendrogram.
+Compared with K-means, hierarchical clustering does not require choosing K beforehand, and the dendrogram allows users to select the number of clusters by “cutting” the tree at a chosen height.
+
+*Main Approaches*:   
+- Agglomerative (bottom-up): start with each observation as its own cluster and iteratively merge the closest pairs.
+- Divisive (top-down): start with all observations in one cluster and recursively split into smaller clusters.
 
 ## Reference
 

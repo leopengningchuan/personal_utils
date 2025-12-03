@@ -8,7 +8,7 @@ Curated resources and reusable utilities for general programming, documentation,
   - [SQL Syntax Related](#sql-syntax-related)
   - [Statistics Related](#statistics-related)
     - [Confusion Matrix](#confusion-matrix)
-  - [Model Related](#model-related)
+  - [Regression/Classification Models](#regression-classification-models)
     - [Linear Regression](#linear-regression)
     - [Logistic Regression](#logistics-regression)
     - [Linear Discriminant Analysis](#linear-discriminant-analysis)
@@ -18,6 +18,13 @@ Curated resources and reusable utilities for general programming, documentation,
     - [Random Forest](#random-forest)
     - [K-Means Clustering](#k-means-clustering)
     - [Hierarchical Clustering](#hierarchical-clustering)
+  - [Model Related](#model-related)
+    - [Feature Engineering](#feature-engineering)
+    - [Feature Selection](#feature-selection)
+    - [Hyperparameter Search](#hyperparameter-search)
+    - [Bias & Variance](#bias-variance)
+    - [Overfitting & Underfitting](#overfitting-underfitting)
+
 - [Reference](#reference)
   - [Markdown Related](#markdown-related)
   - [GitHub & Version Control](#github--version-control)
@@ -91,7 +98,7 @@ String related:
 - $F Score = \frac{2}{\frac{1}{Recall}+\frac{1}{Precision}} = \frac{2TP}{2TP+FP+FN}$
 
 
-### Model Related
+### Regression/Classification Models
 
 #### Linear Regression
 *Definition*:   
@@ -242,6 +249,52 @@ Compared with K-means, hierarchical clustering does not require choosing K befor
 *Main Approaches*:   
 - Agglomerative (bottom-up): start with each observation as its own cluster and iteratively merge the closest pairs.
 - Divisive (top-down): start with all observations in one cluster and recursively split into smaller clusters.
+
+### Model Related
+
+#### Feature Engineering
+*Definition*:   
+Feature engineering is the process of transforming raw features into features that better represent the underlying problem to the predictive models, resulting in improved model accuracy on unseen data.
+
+---
+
+#### Feature Selection
+*Definition*:   
+Feature selection is the process of reducing the number of input variables when developing a predictive model, aiming at reducing the computational cost of modeling and improve the performance of the model.
+
+*Methods*:
+-	Best Subset Selection: Test all subsets and find the best performance one or until some stopping criterion is met.
+-	Forward Stepwise Selection: Forward selection starts with an empty set of variables and adds variables to it until some stopping criterion is met. (Might miss the optimal subset of features)
+- Backward Stepwise Selection: Backward selection starts with a complete set of variables and then excludes variables from that set until some stopping criterion is met. (Might miss the optimal subset of features)
+
+---
+
+#### Hyperparameter Search
+*Definition*:   
+A hyperparameter is a parameter used to control the learning process in machine learning. Parameters are the configuration model, which are internal to the model. Hyperparameters are the explicitly specified parameters that control the training process.
+
+*Methods*:
+-	Grid search: An exhaustive search that is performed on the specific parameter values of a model.
+-	Random search: The values of the hyperparameters are selected randomly.
+-	Hill climbing: At each iteration selects the best direction in the hyperparameter space to choose the next hyperparameter value.
+-	Bayesian optimization: Tt is an approach that uses Bayes Theorem to direct the search in order to find the minimum or maximum of an objective function. It selects the next hyperparameter value based on the function outputs in the previous iterations; but unlike hill climbing, it looks at past iterations globally and not only at the last one.
+
+---
+
+#### Bias & Variance
+*Definition*:   
+Bias is the amount that a model’s prediction differs from the target value, compared to the training data.
+
+Variance describes how much a random variable differs from its expected value.
+
+---
+
+#### Overfitting & Underfitting
+*Definition*:   
+Overfitting is a model fits exactly against its training data and have performs badly on unobserved data. It leads to high variance and low bias model. It happens when the learning power is too high, data size is too small. It can be solved by reducing model complexity (regularization) and increase the data volume.
+
+Underfitting means the machine learning model has very low accuracy. Its occurrence the model does not fit the data well enough.
+
 
 ## Reference
 

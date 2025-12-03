@@ -22,8 +22,12 @@ Curated resources and reusable utilities for general programming, documentation,
     - [Feature Engineering](#feature-engineering)
     - [Feature Selection](#feature-selection)
     - [Hyperparameter Search](#hyperparameter-search)
-    - [Bias & Variance](#bias-variance)
-    - [Overfitting & Underfitting](#overfitting-underfitting)
+    - [Bias & Variance](#bias--variance)
+    - [Overfitting & Underfitting](#overfitting--underfitting)
+    - [Imbalanced Data](#imbalanced-data)
+    - [Resampling](#resampling)
+    - [Cross-Validation](#cross-validation)
+    - [Bootstrapping](#bootstrapping)
 
 - [Reference](#reference)
   - [Markdown Related](#markdown-related)
@@ -78,6 +82,7 @@ String related:
 - `REGEXP_SUBSTR(str_col, '#[A-Za-z0-9_]+')'` – Return a string part that match the REGEX expression
 - `str_col LIKE '@%_'` – Return a string that follows the pattern (`%` represents zero, one, or multiple characters; `_` represents one, single character)
 
+---
 
 ### Statistics Related
 
@@ -97,6 +102,7 @@ String related:
 - Positive Predicted Value: $Precision = \frac{TP}{TP+FP}$	
 - $F Score = \frac{2}{\frac{1}{Recall}+\frac{1}{Precision}} = \frac{2TP}{2TP+FP+FN}$
 
+---
 
 ### Regression/Classification Models
 
@@ -250,6 +256,8 @@ Compared with K-means, hierarchical clustering does not require choosing K befor
 - Agglomerative (bottom-up): start with each observation as its own cluster and iteratively merge the closest pairs.
 - Divisive (top-down): start with all observations in one cluster and recursively split into smaller clusters.
 
+---
+
 ### Model Related
 
 #### Feature Engineering
@@ -294,6 +302,43 @@ Variance describes how much a random variable differs from its expected value.
 Overfitting is a model fits exactly against its training data and have performs badly on unobserved data. It leads to high variance and low bias model. It happens when the learning power is too high, data size is too small. It can be solved by reducing model complexity (regularization) and increase the data volume.
 
 Underfitting means the machine learning model has very low accuracy. Its occurrence the model does not fit the data well enough.
+
+---
+
+#### Imbalanced Data
+*Definition*:   
+Imbalanced data refers to those types of datasets where the target class has an uneven distribution of observations.
+
+An effective way to handle imbalanced data is to downsample and upweight the majority class:
+- Downsampling: training on a disproportionately low subset of the majority class examples.
+- Upweighting: adding an example weight to the downsampled class equal to the factor by which you downsampled.
+
+---
+
+#### Resampling
+*Definition*:   
+Resampling refers to methods that repeatedly draw samples from the available training data and recompute a model or statistic on each sample. It is used to estimate model performance, assess model stability, and quantify uncertainty.
+
+*Methods*:
+- Cross-Validation: Evaluates model prediction error by repeatedly splitting the data into different training/validation sets.
+- Bootstrap: Draws samples with replacement from the training data to estimate model variance, stability, or confidence intervals.
+
+---
+
+#### Cross-Validation
+*Definition*:   
+Cross-validation is a resampling procedure used to evaluate machine learning models on a limited data sample. The simplest example of cross-validation is when you split your data into two groups: training data and testing data, where you use the training data to build the model and the testing data to test the model.
+
+*Methods*:   
+- K-Fold Cross-Validation: Partitioning a dataset into k groups, where each group is given the opportunity of being used as a held-out test set leaving the remaining groups 
+- Leave One Out Cross-Validation (LOOCV): a cross-validation approach in which each observation is considered as the validation set and the rest (N-1) observations are considered as the training set (k = n).
+
+---
+
+#### Bootstrapping
+*Definition*:   
+Bootstrapping: Samples are drawn from the dataset with replacement, where those instances not drawn into the data sample may be used for the test set.
+Bagging (= bootstrap aggregation) is performing it many times and training an estimator for each bootstrapped dataset.
 
 
 ## Reference

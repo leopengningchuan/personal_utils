@@ -8,6 +8,7 @@ Curated resources and reusable utilities for general programming, documentation,
   - [SQL Syntax Related](#sql-syntax-related)
   - [Statistics Related](#statistics-related)
     - [Confusion Matrix](#confusion-matrix)
+    - [ROC Curve](#roc-curve)
   - [Regression/Classification Models](#regression-classification-models)
     - [Linear Regression](#linear-regression)
     - [Logistic Regression](#logistics-regression)
@@ -87,7 +88,7 @@ String related:
 ### Statistics Related
 
 #### Confusion Matrix
-
+*Definition*:   
 | Actual/Predict | 1              | 0              |
 |----------------|:--------------:|---------------:|
 | 1              | True Positive  | False Negtaive |
@@ -101,6 +102,22 @@ String related:
 - True Negative Rate (Higher specificity → lower Type I error): $Specificity = \frac{TN}{TN+FP}$	  
 - Positive Predicted Value: $Precision = \frac{TP}{TP+FP}$	
 - $F Score = \frac{2}{\frac{1}{Recall}+\frac{1}{Precision}} = \frac{2TP}{2TP+FP+FN}$
+
+---
+
+#### ROC Curve
+*Definition*:   
+A Receiver Operating Characteristic (ROC) curve is a diagnostic plot that illustrates the performance of a binary classifier across all possible classification thresholds. It shows the trade-off between the True Positive Rate (TPR) and the False Positive Rate (FPR) as the decision threshold varies. 
+
+A model with a curve closer to the top-left corner demonstrates stronger discriminative ability, and the Area Under the Curve (AUC) summarizes this performance into a single metric.
+
+![*ROC Example*](images/roc_example_20251205.png)
+
+- x Axis: False Positive Rate ($\frac{FP}{FP+TN}$)		
+- y Axis: True Positive Rate (Sensitivity, Recall, $\frac{TP}{TP+FN}$)
+- Left-down corner (0, 0): All classified as N, FP = 0 and TP = 0
+- Right-up corner (1, 1): All classified as T, FP = 1 and TP = 1
+- ROC is robust to imbalance, unlike raw accuracy.
 
 ---
 

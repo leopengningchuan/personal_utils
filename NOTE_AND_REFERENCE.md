@@ -7,6 +7,10 @@ Curated resources and reusable utilities for general programming, documentation,
 - [Note](#note)
   - [SQL Syntax Related](#sql-syntax-related)
   - [Statistics Related](#statistics-related)
+    - [P-Value](#p-value)
+    - [Coefficient Value](#coefficient-value)
+    - [Collinearity](#collinearity)
+    - [Confidence Intervals & Prediction Intervals](#confidence-intervals--prediction-intervals)
     - [Confusion Matrix](#confusion-matrix)
     - [ROC Curve](#roc-curve)
   - [Regression/Classification Models](#regression-classification-models)
@@ -86,6 +90,39 @@ String related:
 ---
 
 ### Statistics Related
+
+#### P-Value
+*Definition*:   
+Assuming the null hypothesis is true, the probability of obtaining a result equal to or "more extreme" than what was actually observed.
+
+The p-value in the table is the minimum α (the level of significance, a user defined value) at which the coefficient is relevant. The lower the p-value, the more important is the variable in predicting the price.
+
+---
+
+#### Coefficient Value
+*Definition*:   
+Holding other variables in the model constant, how much the mean of the dependent variable changes if the independent variable changes by one unit.
+
+---
+
+#### Collinearity
+*Definition*:   
+Ttwo or more independent variables are closely related to one another
+
+VIF, variance inflation factor, is a measure of the amount of multicollinearity in a set of multiple regression variables. If VIF > 10, the multicollinearity is severe.
+
+---
+
+#### Confidence Intervals & Prediction Intervals
+*Definition*:   
+Confidence intervals tell you how well you have determined a parameter of interest.
+Prediction intervals tell you where you can expect to see the next data point sampled. 
+
+Confidence interval shows the likely range of values associated with some statistical parameter of the data, such as the population mean.
+Prediction intervals predicts in what range a future individual observation will fall. 
+Confidence interval CI are about the parameter of the population; prediction Interval PI are about outcomes. CI are much lower than PI.
+
+---
 
 #### Confusion Matrix
 *Definition*:   

@@ -15,7 +15,8 @@ Curated resources and reusable utilities for general programming, documentation,
     - [ROC Curve](#roc-curve)
   - [Regression/Classification Models](#regression-classification-models)
     - [Linear Regression](#linear-regression)
-    - [Logistic Regression](#logistics-regression)
+    - [Logistic Regression](#logistic-regression)
+    - [Regularization ](#regularization)
     - [Linear Discriminant Analysis](#linear-discriminant-analysis)
     - [Support Vector Machine](#support-vector-machine)
     - [K-Nearest Neighbors](#k-nearest-neighbors)
@@ -188,9 +189,9 @@ $$RMSE = \sqrt{\frac{RSS}{n}} $$
 
 $R^2$ is a statistical measure that represents the proportion of the variance for a dependent variable that's explained by the independent variables in a regression model. R2 can have a negative value when the model selected does not follow the trend of the data.
 
-$R_Adj^2$ is a modified version of R2 which takes n (number of observations) and k (number of independent variables) into account. It can be used to compare models that have a different number of variables. $R_Adj^2$ is always lower than $R^2$.
+$R^2_{\text{Adj}}$ is a modified version of R2 which takes n (number of observations) and k (number of independent variables) into account. It can be used to compare models that have a different number of variables. $R^2_{\text{Adj}}$ is always lower than $R^2$.
 
-$$R_Adj^2 = 1 - (1 - R^2)\frac{n - 1}{n - k - 1}$$
+$$R^2_{\text{Adj}} = 1 - (1 - R^2)\frac{n - 1}{n - k - 1}$$
 
 ---
 
@@ -206,6 +207,37 @@ $$\log \frac{P(Y=1 \mid X=x)}{P(Y=0 \mid X=x)} = \beta_0 + \beta_1 x$$
 The logit of the estimated probability response is a linear function of the predictor parameters.
 
 $$\text{Log-likelihood: } \ell(\boldsymbol{\beta}) = \sum_{i=1}^n \Big[ y_i \log p_i + (1 - y_i)\log(1 - p_i) \Big], \quad p_i = \sigma(\mathbf{x}_i^\top \boldsymbol{\beta}) = \frac{1}{1 + e^{-\mathbf{x}_i^\top \boldsymbol{\beta}}}$$
+
+---
+
+#### Regularization
+*Definition*:   
+Regularization is adding tuning parameter (penalty term) to the error function of a model to induce smoothness in order to prevent overfitting by shrinking coefficients (which can significantly reduce the variance with some cost in bias; it can also perform variable selection).
+
+*L1 & L2*:   
+Lasso (L1): Find $\beta$ where minimize: $RSS + \lambda \sum_{i=1}^{p} |\beta_i|$
+
+Ridge (L2): Find $\beta$ where minimize: $RSS + \lambda \sum_{i=1}^{p} \beta_i^2$
+
+Lasso (L1) performs both coefficient shrinkage and variable selection, often producing sparse models because it can drive some coefficients exactly to zero. This makes Lasso particularly useful when the true underlying model is sparse and when interpretability or feature selection is important. 
+
+Ridge (L2), on the other hand, only shrinks coefficients but never eliminates them, so it retains all predictors. It is especially effective when dealing with multicollinearity among features. L2 regularization handles multicollinearity better because it shrinks correlated coefficients together instead of forcing one to zero. This stabilizes the model and reduces variance when predictors are highly correlated.
+
+*λ*:   
+When λ = 0, both Lasso and Ridge become Linear Regression. 当 λ → ∞, some β = 0 in Lasso, β → 0 in Ridge.
+λ is typically chosen using k-fold cross-validation, where we compute prediction error for a grid of λ values and select the value that minimizes the average validation error.
+
+*Feature Standarization*:    
+We standardize features before Ridge/Lasso because the penalty depends on coefficient magnitude. If predictors are not on the same scale, the regularization will unevenly penalize them, distorting the solution. Standardization ensures fair penalization and stable estimates.
+
+
+*L1 Sparce Model*:    
+Because the L1 penalty uses the absolute value of coefficients, it creates a non-smooth optimization boundary with corners. During optimization, these corners promote exact zeros in the solution, which leads to automatic variable selection and sparsity. In contrast, the L2 constraint is circular and smooth, so the solution rarely lands exactly on an axis, which is why Ridge shrinks coefficients but almost never sets them exactly to zero.
+
+*Elastic Net*:   
+Elastic Net: Find $\beta$ where minimize: $RSS + \lambda_{\text{1}} \sum_{i=1}^{p} |\beta_i| + \lambda_{\text{2}} \sum_{i=1}^{p} \beta_i^2$
+
+Elastic Net is useful when we have many correlated features and still want sparsity. It balances feature selection (L1) and coefficient stability (L2).
 
 ---
 

@@ -150,7 +150,7 @@ A Receiver Operating Characteristic (ROC) curve is a diagnostic plot that illust
 
 A model with a curve closer to the top-left corner demonstrates stronger discriminative ability, and the Area Under the Curve (AUC) summarizes this performance into a single metric.
 
-![*ROC Example*](images/roc_example_20251205.png)
+![*ROC Example*](../images/roc_example_20251205.png)
 
 - x Axis: False Positive Rate ($\frac{FP}{FP+TN}$)		
 - y Axis: True Positive Rate (Sensitivity, Recall, $\frac{TP}{TP+FN}$)
@@ -167,23 +167,26 @@ The F-statistic is typically constructed as a ratio of two independent variance 
 It is used to compare variability across groups, compare statistical models, or test joint hypotheses about parameters.
 
 1. F-test in Linear Regression (Model Significance Test)
-The F-statistic tells if any of the independent variables is related to the dependent variable.
+  The F-statistic tells if any of the independent variables is related to the dependent variable.
 
-Hypotheses:
-$$H_0: \beta_1 = \beta_2 = ... = \beta_k = 0$$
-$$H_1: At least one \beta_i ≠ 0$$
+  Hypotheses:
 
-Relationship between F-test and t-test:
-In simple linear regression (one predictor), the overall F-test is mathematically equivalent to the t-test for the slope, because:
+  $$H_0: \beta_1 = \beta_2 = ... = \beta_k = 0$$
 
-$$F = t^2$$
+  $$H_1: At least one \beta_i ≠ 0$$
 
-This equivalence holds only when the model has a single predictor. In multiple regression, ANOVA, or variance tests, F-tests serve different purposes and are not interchangeable with t-tests.
+  Relationship between F-test and t-test:
+  In simple linear regression (one predictor), the overall F-test is mathematically equivalent to the t-test for the slope, because:
+
+  $$F = t^2$$
+
+  This equivalence holds only when the model has a single predictor. In multiple regression, ANOVA, or variance tests, F-tests serve different purposes and are not interchangeable with t-tests.
 
 2. F-test in ANOVA
 The F-statistic tells if the means of two or more population are equal.
 
 Hypotheses:
+
 $$H_0: \mu_1 = \mu_2 = ... = \mu_k$$
 
 In ANOVA, the F-statistic compares:
@@ -196,7 +199,10 @@ But if between-group variance is much larger than within-group variance, the obs
 3. F-test of Equal Variances
 The F-statistic tells if whether two normal populations have the same variance.
 Hypotheses:
+
 $$H_0: \sigma_1^2 = \sigma_2^2$$
+
+---
 
 ### Regression/Classification Models
 

@@ -13,6 +13,7 @@ Curated resources and reusable utilities for general programming, documentation,
     - [Confidence Intervals & Prediction Intervals](#confidence-intervals--prediction-intervals)
     - [Confusion Matrix](#confusion-matrix)
     - [ROC Curve](#roc-curve)
+    - [F-Test](#f-test)
   - [Regression/Classification Models](#regression-classification-models)
     - [Linear Regression](#linear-regression)
     - [Logistic Regression](#logistic-regression)
@@ -158,6 +159,44 @@ A model with a curve closer to the top-left corner demonstrates stronger discrim
 - ROC is robust to imbalance, unlike raw accuracy.
 
 ---
+
+#### F-Test
+*Definition*:   
+An F-test is any statistical test that uses an F-distributed test statistic under the null hypothesis.
+The F-statistic is typically constructed as a ratio of two independent variance estimates (mean squares), each scaled by their degrees of freedom.
+It is used to compare variability across groups, compare statistical models, or test joint hypotheses about parameters.
+
+1. F-test in Linear Regression (Model Significance Test)
+The F-statistic tells if any of the independent variables is related to the dependent variable.
+
+Hypotheses:
+$$H_0: \beta_1 = \beta_2 = ... = \beta_k = 0$$
+$$H_1: At least one \beta_i ≠ 0$$
+
+Relationship between F-test and t-test:
+In simple linear regression (one predictor), the overall F-test is mathematically equivalent to the t-test for the slope, because:
+
+$$F = t^2$$
+
+This equivalence holds only when the model has a single predictor. In multiple regression, ANOVA, or variance tests, F-tests serve different purposes and are not interchangeable with t-tests.
+
+2. F-test in ANOVA
+The F-statistic tells if the means of two or more population are equal.
+
+Hypotheses:
+$$H_0: \mu_1 = \mu_2 = ... = \mu_k$$
+
+In ANOVA, the F-statistic compares:
+- Between-group variance: how far the group means are from each other
+- Within-group variance: random variation inside each group
+F is the ratio of between-group mean square to within-group mean square.
+If the group means are truly equal, the differences between groups should be no larger than random noise, so the two variances are similar and F ≈ 1.
+But if between-group variance is much larger than within-group variance, the observed differences cannot be explained by randomness alone, meaning the group means must differ.
+
+3. F-test of Equal Variances
+The F-statistic tells if whether two normal populations have the same variance.
+Hypotheses:
+$$H_0: \sigma_1^2 = \sigma_2^2$$
 
 ### Regression/Classification Models
 

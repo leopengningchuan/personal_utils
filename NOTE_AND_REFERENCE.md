@@ -15,7 +15,9 @@ Curated resources and reusable utilities for general programming, documentation,
     - [ROC Curve](#roc-curve)
     - [Hypothesis Testing](#hypothesis-testing)
     - [F-Test](#f-test)
-    - [Covariance & Correlation](#covariance--correlation) 
+    - [Covariance & Correlation](#covariance--correlation)
+    - [PCA](#pca)
+    - [z-distribution & t-distribution](#z-distribution--t-distribution) 
   - [Regression/Classification Models](#regression-classification-models)
     - [Linear Regression](#linear-regression)
     - [Logistic Regression](#logistic-regression)
@@ -220,6 +222,25 @@ Covariance indicates the direction of the relationship between two variables but
 Correlation standardizes covariance by the variables’ standard deviations, providing a unit-free measure of both the strength and direction of their linear relationship.
 
 Pearson correlation measures linear association only. Variables can be positively related in a nonlinear or monotonic way while exhibiting low or zero Pearson correlation.
+
+---
+
+#### PCA
+*Definition*:   
+PCA (Principal Component Analysis) is a dimensionality reduction technique that projects high-dimensional data onto a lower-dimensional linear subspace.
+
+The projection is chosen such that the first principal component captures the maximum possible variance in the data, and each subsequent component captures the maximum remaining variance subject to being orthogonal to the previous ones.
+
+The resulting principal components define the best low-dimensional linear approximation of the original data in terms of minimizing reconstruction error.
+
+---
+
+#### z-distribution & t-distribution
+The z-distribution is the standard normal distribution with mean 0 and standard deviation 1. It is used when the population standard deviation is known, or when the sample size is large (more than 30 in practice) and the Central Limit Theorem applies.
+
+The t-distribution is similar to the z-distribution but has heavier tails. It is used when the population standard deviation is unknown and must be estimated from the sample. The shape of the t-distribution depends on the sample size (degrees of freedom); with smaller samples, it is more spread out and produces wider confidence intervals.
+
+As the sample size increases, the t-distribution converges to the z-distribution.
 
 ---
 

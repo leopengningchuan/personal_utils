@@ -15,6 +15,7 @@ Curated resources and reusable utilities for general programming, documentation,
     - [ROC Curve](#roc-curve)
     - [Hypothesis Testing](#hypothesis-testing)
     - [F-Test](#f-test)
+    - [Chi-square Test](#chi-square-test)
     - [Covariance & Correlation](#covariance--correlation)
     - [PCA](#pca)
     - [z-distribution & t-distribution](#z-distribution--t-distribution) 
@@ -212,6 +213,26 @@ The F-statistic tells if whether two normal populations have the same variance.
 Hypotheses:
 
 $$H_0: \sigma_1^2 = \sigma_2^2$$
+
+---
+
+#### Chi-square Test
+*Definition*:   
+The Chi-square test is a statistical hypothesis test used to compare observed frequencies with expected frequencies under a given null hypothesis.
+
+$$\chi^2 = \sum_{i=1}^{r} \sum_{j=1}^{c} \frac{(O_{ij} - E_{ij})^2}{E_{ij}}$$
+
+**Chi-square Goodness-of-fit Test**
+The Chi-square Goodness-of-fit test examines whether a sample distribution is consistent with a specified theoretical distribution.
+It compares the observed frequencies of a single categorical variable to the frequencies expected under a specified theoretical distribution.
+
+**Chi-square Test of Independence**
+The Chi-square Test of independence examines whether there is a statistically significant association between two categorical variables.
+It compares the observed frequencies in a contingency table to the frequencies expected if the two categorical variables are independent.
+
+**Chi-square Test of Homogeneity**
+The Chi-square test of homogeneity is a statistical hypothesis test used to determine whether different populations have the same distribution of a categorical variable.
+It compares the observed frequencies across groups to the frequencies expected if all populations share an identical distribution.
 
 ---
 

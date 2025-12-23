@@ -40,7 +40,9 @@ Curated resources and reusable utilities for general programming, documentation,
     - [Resampling](#resampling)
     - [Cross-Validation](#cross-validation)
     - [Bootstrapping](#bootstrapping)
-
+    - [Bagging](#bagging)
+    - [Boosting](#boosting)
+    - [Stacking](#stacking)
 - [Reference](#reference)
   - [Markdown Related](#markdown-related)
   - [GitHub & Version Control](#github--version-control)
@@ -529,9 +531,32 @@ Cross-validation is a resampling procedure used to evaluate machine learning mod
 
 #### Bootstrapping
 *Definition*:   
-Bootstrapping: Samples are drawn from the dataset with replacement, where those instances not drawn into the data sample may be used for the test set.
-Bagging (= bootstrap aggregation) is performing it many times and training an estimator for each bootstrapped dataset.
+Samples are drawn from the dataset with replacement, where those instances not drawn into the data sample may be used for the test set.
 
+---
+
+#### Bagging
+*Definition*:   
+Bagging (Bootstrap Aggregating) is an ensemble learning method that repeatedly draws bootstrap samples from the training data, trains an estimator on each sample, and aggregates their predictions (e.g., by averaging or voting) to produce the final output.
+
+---
+
+#### Boosting
+*Definition*:   
+Boosting is an ensemble learning technique that combines multiple weak learners sequentially to form a strong model.
+Each new model focuses on correcting the errors made by the previous models.
+
+In gradient boosting, each weak learner is trained to fit the negative gradient (residuals) of the loss function with respect to the current model prediction.
+The objective is to minimize the overall loss by adding weak learners in a stage-wise, gradient-descent-like manner.
+
+---
+
+#### Stacking
+*Definition*:   
+Stacking is an ensemble learning technique that combines multiple base models by training a meta-model to aggregate their predictions.
+The base models are trained independently, and their outputs are used as input features for the final supervised model.
+
+Unlike bagging, which typically combines models through simple averaging or voting, stacking learns how to optimally combine model predictions using a trained meta-learner.
 
 ## Reference
 

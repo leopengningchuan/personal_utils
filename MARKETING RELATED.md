@@ -38,7 +38,7 @@ LTV/CAC > 3 is a signal of a healthy increasement.
 
 ### ROAS
 *Definition*:   
-ROAS (Return on Ad Spend) measures the revenue generated for every dollar spent on advertising (media efficiency, not business profitability.).
+ROAS (Return on Ad Spend) measures the revenue generated for every dollar spent on advertising (media efficiency, not business profitability).
 
 $$ROAS = Ad Revenue / Ad Spend$$
 
@@ -50,18 +50,41 @@ The ROAS can be high, but there is still loss:
 
 In the long term, LTV/CAC is more important than ROAS.
 
+--- 
+
+### Incrementality
+*Definition*:   
+Incrementality measures the true causal impact of a marketing channel—what conversions would not have happened without the intervention. Unlike standard A/B tests that measure surface-level lift, incrementality isolates net-new behavior using holdout or geo-based experimentation. It’s critical for avoiding over-attribution and allocating budget to channels that truly drive growth.
+
+Methods:
+- Holdout Test
+- Geo Test
+
+A/B testing compares two variants under intervention and tells us which performs better, while holdout testing removes the intervention entirely to measure true incremental lift. Holdout tests answer the causal question of whether the marketing effort creates net-new conversions, not just redistributed ones.
+
+--- 
+
+### MMM
+*Definition*:   
+Marketing Mix Modeling (MMM) is a regression-based approach that estimates the incremental impact of each marketing channel on sales or conversions. Unlike attribution or A/B testing, MMM works with aggregated data and can measure channels where user-level data is not available, such as TV, influencers, or brand campaigns.
+
+MMM is essential because it quantifies the true incremental lift of each channel and enables budget optimization. It answers questions like: “If we increase spend on Facebook by 10%, how much sales will we gain?”
+
+What does MMM Output?
+- Incremental contribution
+- Diminishing return curves
+- Elasticity
+- Optimal budget allocation
 
 
+Why use linear regression for MMM since channels are not independent?   
+Marketing channels are not independent and often influence each other. MMM doesn’t assume independence; instead, linear regression is used to estimate the marginal effect of each channel while controlling for others.
+
+Because channels are highly correlated, MMM typically relies on regularization methods like Ridge or Elastic Net to stabilize coefficients and avoid over-attribution. The goal isn’t to perfectly model the causal structure, but to produce stable, interpretable estimates that can guide budget allocation decisions.
 
 
+Adstock:   
+MMM uses adstock transformations to capture carryover effects, because marketing impact often persists over time rather than disappearing immediately after spend.
 
-
-
-
-
-
-
-
-
-
-
+Saturation:   
+MMM models diminishing returns using saturation curves, allowing teams to estimate marginal ROI and allocate budget more efficiently across channels.

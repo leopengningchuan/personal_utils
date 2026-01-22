@@ -23,6 +23,7 @@ Reusable Python utilities for file, text, and data tasks
   - [google_api_utils](#google_api_utils)
     - [gsheet_upload](#gsheet_upload)
 - [Note and Reference](#note_and_reference)
+- [Marketing Related](#marketing_related)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
 
@@ -49,8 +50,9 @@ Core Logic:
 - `google_api_utils.py` – Google API related utility functions
 - `bind_utils.sh` – script to add utils submodule
 
-Note & Reference:
+Note & Information:
 - `NOTE_AND_REFERENCE.md` – notes and references
+- `MARKETING_RELATED.md` – marketing related information
 
 ## Instructions
 
@@ -193,6 +195,9 @@ To enable the Google Sheet API and connect to the Google Sheet, you need to:
 
 ## Note and Reference
 See [NOTE_AND_REFERENCE.md](https://github.com/leopengningchuan/personal_utils/blob/main/NOTE_AND_REFERENCE.md) for curated resources and reusable utilities that support documentation and development workflows.
+
+## Marketing Related
+See [MARKETING_RELATED.md](https://github.com/leopengningchuan/personal_utils/blob/main/MARKETING_RELATED.md) for knowledge and information related to marketing data analysis.
 
 ## Acknowledgements
 - Thanks to [*Microsoft Word*](https://www.microsoft.com/en-us/microsoft-365) for providing a flexible document format that allows for easy templating.

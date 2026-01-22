@@ -72,21 +72,20 @@ Marketing Mix Modeling (MMM) is a regression-based approach that estimates the i
 
 MMM is essential because it quantifies the true incremental lift of each channel and enables budget optimization. It answers questions like: “If we increase spend on Facebook by 10%, how much sales will we gain?”
 
-What does MMM Output?
+Output:
 - Incremental contribution
 - Diminishing return curves
 - Elasticity
 - Optimal budget allocation
 
 
-Why use linear regression for MMM since channels are not independent?   
+*Why use linear regression for MMM since channels are not independent?*   
 Marketing channels are not independent and often influence each other. MMM doesn’t assume independence; instead, linear regression is used to estimate the marginal effect of each channel while controlling for others.
 
 Because channels are highly correlated, MMM typically relies on regularization methods like Ridge or Elastic Net to stabilize coefficients and avoid over-attribution. The goal isn’t to perfectly model the causal structure, but to produce stable, interpretable estimates that can guide budget allocation decisions.
 
-
-Adstock:   
+*Adstock:*   
 MMM uses adstock transformations to capture carryover effects, because marketing impact often persists over time rather than disappearing immediately after spend.
 
-Saturation:   
+*Saturation:*   
 MMM models diminishing returns using saturation curves, allowing teams to estimate marginal ROI and allocate budget more efficiently across channels.

@@ -46,7 +46,7 @@ $$P(Y = y) = \binom{n}{y} p^y (1 - p)^{n - y}, \quad y = 0, 1, \dots, n$$
 - only one outcome for each trial;
 - the chance (for success $p$) is the same for every trial
 
-*Mean*: $E(X) = np$
+*Mean*: $E(X) = np$   
 *Variance*: $V(X) = np(1-p)$
 
 --- 
@@ -57,13 +57,28 @@ Bernoulli distribution is a special case of the binomial distribution where a si
 
 $$P(Y = 1) = p, \quad P(Y = 0) = 1 - p$$
 
-*Mean*: $E(X) = p$
+*Mean*: $E(X) = p$   
 *Variance*: $V(X) = p(1-p)$
 
 --- 
 
 ### Poisson Distribution
 *Definition*: 
+Poisson distribution is a probability distribution of how many times an event is likely to occur over a specified period.
+
+$$P(X = x) = \frac{e^{-\lambda} \lambda^x}{x!}, \quad x = 0, 1, \dots, n$$
+
+*Assumption*:
+- the events are independent;
+- two events cannot occur at exactly the same instant;
+- the rate of events stays the same.
+
+*Mean*: $E(X) = \lambda$   
+*Variance*: $V(X) = \lambda$   
+
+Poisson distribution can be approximated with normal distribution (μ = λ, σ^2 = λ) when λ is large (λ>=20).   
+
+Poisson distribution is the limiting case of binomial distribution when n is very large and p is very small (λ=np). 
 
 --- 
 

@@ -23,6 +23,7 @@ Reusable Python utilities for file, text, and data tasks
   - [google_api_utils](#google_api_utils)
     - [gsheet_upload](#gsheet_upload)
 - [Note and Reference](#note_and_reference)
+- [Distribution Related](#distribution_related)
 - [Marketing Related](#marketing_related)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
@@ -195,6 +196,9 @@ To enable the Google Sheet API and connect to the Google Sheet, you need to:
 
 ## Note and Reference
 See [NOTE_AND_REFERENCE.md](https://github.com/leopengningchuan/personal_utils/blob/main/NOTE_AND_REFERENCE.md) for curated resources and reusable utilities that support documentation and development workflows.
+
+## Distribution Related
+See [DISTRIBUTION_RELATED.md](https://github.com/leopengningchuan/personal_utils/blob/main/DISTRIBUTION_RELATED.md) for knowledge and information related to distribution.
 
 ## Marketing Related
 See [MARKETING_RELATED.md](https://github.com/leopengningchuan/personal_utils/blob/main/MARKETING_RELATED.md) for knowledge and information related to marketing data analysis.

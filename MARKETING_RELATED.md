@@ -1,10 +1,10 @@
 # Marketing Related
-Organized knowledger and resources for marketing related filed
+A centralized reference for marketing-related concepts, metrics, and data analysis techniques
 
 ## Table of Contents
 - [Project Background](#project-background)
 - [Project Goal](#project-goal)
-- [Note](#note)
+- [Concepts](#concepts)
   - [CAC](#cac)
   - [LTV](#lvt)
   - [ROAS](#roas)
@@ -12,12 +12,12 @@ Organized knowledger and resources for marketing related filed
   - [MMM](#mmm)
 
 ## Project Background
-This document collects terms and knowledge that support data related to marketing. It serves as a personal knowledge base aimed at understanding the intersection of data and marketing.
+This document serves as a personal knowledge base for concepts and terminology at the intersection of marketing and data analytics. It consolidates commonly used metrics, methodologies, and analytical frameworks that are frequently encountered in data-driven marketing work.
 
 ## Project Goal
-To provide a centralized reference hub for commonly used terms and information related to marketing and data field related to marketing.
+The goal of this document is to provide a centralized and structured reference for key marketing and analytics concepts, enabling quick recall, clearer understanding, and consistent usage in analysis, modeling, and decision-making.
 
-## Note
+## Concepts
 ### CAC
 *Definition*:   
 CAC (Customer Acquisition Cost) measures the spending to acquire one paying customer.

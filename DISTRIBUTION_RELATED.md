@@ -39,7 +39,14 @@ The goal of this document is to provide a centralized and structured reference f
 *Definition*:   
 Binomial distribution is a probability distribution of obtaining one of two outcomes under a given number of parameters.
 
-$$P(Y = y) = \binom{n}{y} p^y (1 - p)^{n - y}, \quad y = 0, 1, \dots, n$$
+$$
+P(Y = y) = \binom{n}{y} p^y (1 - p)^{n - y}, \quad y = 0, 1, \dots, n
+
+where:
+- \(n\) is the number of independent trials,
+- \(p\) is the probability of success in each trial,
+- \(y\) is the number of successes.
+$$
 
 *Assumption*:
 - the trials are independent;
@@ -66,7 +73,9 @@ $$P(Y = 1) = p, \quad P(Y = 0) = 1 - p$$
 *Definition*: 
 Poisson distribution is a probability distribution of how many times an event is likely to occur over a specified period.
 
-$$P(X = x) = \frac{e^{-\lambda} \lambda^x}{x!}, \quad x = 0, 1, \dots, n$$
+$$
+P(X = x) = \frac{e^{-\lambda} \lambda^x}{x!}, \quad x = 0, 1, \dots, n
+$$
 
 *Assumption*:
 - the events are independent;

@@ -39,14 +39,13 @@ The goal of this document is to provide a centralized and structured reference f
 *Definition*:   
 Binomial distribution is a probability distribution of obtaining one of two outcomes under a given number of parameters.
 
-$$
-P(Y = y) = \binom{n}{y} p^y (1 - p)^{n - y}, \quad y = 0, 1, \dots, n
+$$P(Y = y) = \binom{n}{y} p^y (1 - p)^{n - y}, \quad y = 0, 1, \dots, n$$
 
 where:
-- \(n\) is the number of independent trials,
-- \(p\) is the probability of success in each trial,
-- \(y\) is the number of successes.
-$$
+- $Y$ is a random variable representing the number of successes;
+- $n$ is the number of independent trials;
+- $p$ is the probability of success in each trial;
+- $y$ is the number of successes
 
 *Assumption*:
 - the trials are independent;
@@ -64,6 +63,11 @@ Bernoulli distribution is a special case of the binomial distribution where a si
 
 $$P(Y = 1) = p, \quad P(Y = 0) = 1 - p$$
 
+where:
+- $Y$ is a Bernoulli random variable;
+- $1$ represents success and $0$ represents failure;
+- $p$ is the probability of success, with $0 \le p \le 1$
+
 *Mean*: $E(X) = p$   
 *Variance*: $V(X) = p(1-p)$
 
@@ -73,9 +77,12 @@ $$P(Y = 1) = p, \quad P(Y = 0) = 1 - p$$
 *Definition*: 
 Poisson distribution is a probability distribution of how many times an event is likely to occur over a specified period.
 
-$$
-P(X = x) = \frac{e^{-\lambda} \lambda^x}{x!}, \quad x = 0, 1, \dots, n
-$$
+$$P(X = x) = \frac{e^{-\lambda} \lambda^x}{x!}, \quad x = 0, 1, \dots$$
+
+where:
+- $X$ is a random variable representing the number of events occurring in a fixed interval;
+- $x$ is a specific observed number of events;
+- $\lambda$ is the average rate (mean number) of events per interval, with $\lambda \gt 0$
 
 *Assumption*:
 - the events are independent;

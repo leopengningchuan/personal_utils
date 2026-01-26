@@ -67,8 +67,8 @@ where:
 - only one outcome for each trial;
 - the chance (for success $p$) is the same for every trial.
 
-*Mean*: $E(X) = n\,p$   
-*Variance*: $V(X) = n\,p\,(1 - p)$
+*Mean*: $E(X) = np$   
+*Variance*: $V(X) = np(1 - p)$
 
 --- 
 
@@ -84,7 +84,7 @@ where:
 - $p$ is the probability of success, with $0 \le p \le 1$.
 
 *Mean*: $E(X) = p$   
-*Variance*: $V(X) = p\,(1-p)$
+*Variance*: $V(X) = p(1-p)$
 
 --- 
 

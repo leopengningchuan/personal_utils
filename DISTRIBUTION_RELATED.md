@@ -27,11 +27,26 @@ The goal of this document is to provide a centralized and structured reference f
 
 ### Discrete Probability Distribution
 *Definition*:   
+Discrete probability distribution of a discrete random variable (RV) is a table or graph that assigns a probability to each possible value of the random variable.
+
+*Mean*: $E(X) = \mu = \sum_{x} x\, P(X = x)$
+*Variance*: $\V(X)= \sum_{x} (x - \mu)^2\, P(X = x)$
 
 --- 
 
 ### Uniform Distribution
 *Definition*:   
+Uniform distribution is a probability distribution in which every possible result is equally likely.
+
+$$U(a, b) = \frac{1}{b - a}, \quad a \le x \le b$$
+
+where:
+- $X$ is a continuous random variable uniformly distributed on the interval $[a, b]$;
+- $x$ is a specific value of the random variable $X$;
+- $a$ and $b$ are the lower and upper bounds of the distribution, with $a \lt b$.
+
+*Mean*: $E(X) = \frac{a + b}{2}$   
+*Variance*: $V(X) = \frac{(b - a)^2}{12}$
 
 --- 
 
@@ -39,21 +54,21 @@ The goal of this document is to provide a centralized and structured reference f
 *Definition*:   
 Binomial distribution is a probability distribution of obtaining one of two outcomes under a given number of parameters.
 
-$$P(Y = y) = \binom{n}{y} p^y (1 - p)^{n - y}, \quad y = 0, 1, \dots, n$$
+$$P(Y = y) = \binom{n}{y} p^y (1 - p)^{n - y}, \quad y = 0, 1, 2, \dots, n$$
 
 where:
 - $Y$ is a random variable representing the number of successes;
 - $n$ is the number of independent trials;
 - $p$ is the probability of success in each trial;
-- $y$ is the number of successes
+- $y$ is the number of successes.
 
 *Assumption*:
 - the trials are independent;
 - only one outcome for each trial;
-- the chance (for success $p$) is the same for every trial
+- the chance (for success $p$) is the same for every trial.
 
-*Mean*: $E(X) = np$   
-*Variance*: $V(X) = np(1-p)$
+*Mean*: $E(X) = n\,p$   
+*Variance*: $V(X) = n\,p\,(1 - p)$
 
 --- 
 
@@ -66,10 +81,10 @@ $$P(Y = 1) = p, \quad P(Y = 0) = 1 - p$$
 where:
 - $Y$ is a Bernoulli random variable;
 - $1$ represents success and $0$ represents failure;
-- $p$ is the probability of success, with $0 \le p \le 1$
+- $p$ is the probability of success, with $0 \le p \le 1$.
 
 *Mean*: $E(X) = p$   
-*Variance*: $V(X) = p(1-p)$
+*Variance*: $V(X) = p\,(1-p)$
 
 --- 
 
@@ -77,12 +92,12 @@ where:
 *Definition*: 
 Poisson distribution is a probability distribution of how many times an event is likely to occur over a specified period.
 
-$$P(X = x) = \frac{e^{-\lambda} \lambda^x}{x!}, \quad x = 0, 1, \dots$$
+$$P(X = x) = \frac{e^{-\lambda} \lambda^x}{x!}, \quad x = 0, 1, 2, \dots$$
 
 where:
 - $X$ is a random variable representing the number of events occurring in a fixed interval;
 - $x$ is a specific observed number of events;
-- $\lambda$ is the average rate (mean number) of events per interval, with $\lambda \gt 0$
+- $\lambda$ is the average rate (mean number) of events per period, with $\lambda \gt 0$.
 
 *Assumption*:
 - the events are independent;
@@ -92,11 +107,17 @@ where:
 *Mean*: $E(X) = \lambda$   
 *Variance*: $V(X) = \lambda$   
 
-Poisson distribution can be approximated with normal distribution (μ = λ, σ^2 = λ) when λ is large (λ>=20).   
+Poisson distribution can be approximated with normal distribution ($\mu = \lambda, \sigma^2 = \lambda$) when λ is large ($\lambda \ge 20$).   
 
-Poisson distribution is the limiting case of binomial distribution when n is very large and p is very small (λ=np). 
+Poisson distribution is the limiting case of binomial distribution when $n$ is very large and $p$ is very small ($\lambda = np$). 
 
 --- 
 
 ### Exponential Distribution
-*Definition*: 
+*Definition*:   
+Exponential distribution is a probability distribution of the time between events in a Poisson point process, a process in which events occur continuously and independently at a constant average rate.
+
+*Mean*: $E(X) = \frac{1}{\lambda}$   
+*Variance*: $V(X) = \frac{1}{\lambda^2}$   
+
+Poisson distribution deals with the number of occurrences in a fixed period of time, and exponential distribution deals with the time between occurrences of successive events as time flows by continuously.

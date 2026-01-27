@@ -22,6 +22,36 @@ The goal of this document is to provide a centralized and structured reference f
 ## Concepts
 ### Normal Distribution
 *Definition*:   
+Normal distribution is a probability distribution that is symmetric about the mean, showing that data near the mean are more frequent in occurrence than data far from the mean.
+
+$$
+N(\mu,\sigma^2) = \frac{1}{\sigma\sqrt{2\pi}}
+e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+$$
+
+where:
+- $X$ is a continuous random variable;
+- $x$ is a specific value of $X$;
+- $\mu$ is the mean of the distribution;
+- $\sigma$ is the standard deviation of the distribution, with $\sigma > 0$;
+- $\sigma^2$ is the variance of the distribution.
+
+*Mean*: $E(X) = \mu $
+*Variance*: $V(X)= \sigma^2$
+
+*Properties*:
+- Unimodal (Only one mode);
+- Symmetrical (left and right halves are mirror images);
+- Bell-shaped (maximum height (mode) at the mean);
+- Mean, Mode, and Median are all located in the center;
+- Asymptotic.
+
+A normal random variable with $\mu = 0$ and $\sigma^2 = 1$ is said to be a standard normal distribution and is denoted $Z$.
+
+Z-score: tells how many standard deviations are away from the mean:
+- 1 standard deviation: 68%
+- 2 standard deviations: 95%
+- 3 standard deviations: 99%
 
 ---
 
@@ -30,7 +60,7 @@ The goal of this document is to provide a centralized and structured reference f
 Discrete probability distribution of a discrete random variable (RV) is a table or graph that assigns a probability to each possible value of the random variable.
 
 *Mean*: $E(X) = \mu = \sum_{x} x\, P(X = x)$
-*Variance*: $\V(X)= \sum_{x} (x - \mu)^2\, P(X = x)$
+*Variance*: $V(X)= \sum_{x} (x - \mu)^2\, P(X = x)$
 
 --- 
 

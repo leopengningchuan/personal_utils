@@ -1,10 +1,10 @@
-# Marketing Related
+# Distribution Related
 A curated knowledge base for distribution concepts, processes, and analytical foundations
 
 ## Table of Contents
 - [Project Background](#project-background)
 - [Project Goal](#project-goal)
-- [Concepts](#concepts)
+- [Distributions](#distributions)
   - [Normal Distribution](#normal-distribution)
   - [Discrete Probability Distribution](#discrete-probability-distribution)
   - [Uniform Distribution](#uniform-distribution)
@@ -19,7 +19,7 @@ This document serves as a personal knowledge base for concepts, terminology, and
 ## Project Goal
 The goal of this document is to provide a centralized and structured reference for core distribution-related knowledge, enabling clearer understanding, consistent usage of terminology, and more effective analysis in distribution planning and operations.
 
-## Concepts
+## Distributions
 ### Normal Distribution
 *Definition*:   
 Normal distribution is a probability distribution that is symmetric about the mean, showing that data near the mean are more frequent in occurrence than data far from the mean.

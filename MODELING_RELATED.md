@@ -245,7 +245,7 @@ A hyperparameter is a parameter used to control the learning process in machine 
 - Grid search: An exhaustive search that is performed on the specific parameter values of a model.
 - Random search: The values of the hyperparameters are selected randomly.
 - Hill climbing: At each iteration selects the best direction in the hyperparameter space to choose the next hyperparameter value.
-- Bayesian optimization: Tt is an approach that uses Bayes Theorem to direct the search in order to find the minimum or maximum of an objective function. It selects the next hyperparameter value based on the function outputs in the previous iterations; but unlike hill climbing, it looks at past iterations globally and not only at the last one.
+- Bayesian optimization: It is an approach that uses Bayes Theorem to direct the search in order to find the minimum or maximum of an objective function. It selects the next hyperparameter value based on the function outputs in the previous iterations; but unlike hill climbing, it looks at past iterations globally and not only at the last one.
 
 ---
 

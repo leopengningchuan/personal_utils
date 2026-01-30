@@ -20,10 +20,13 @@ A curated knowledge base for statistical and probabilistic concepts, distributio
   - [Confusion Matrix](#confusion-matrix)
   - [ROC Curve](#roc-curve)
   - [Hypothesis Testing](#hypothesis-testing)
+  - [Statistical Power](#statistical-power)
   - [F-Test](#f-test)
   - [Chi-square Test](#chi-square-test)
   - [Covariance & Correlation](#covariance--correlation)
   - [PCA](#pca)
+  - [Bayes' Theorem](#bayes-theorem)
+  - [Central Limit Theorem](#central-limit-theorem)
 
 ## Project Background
 This document serves as a personal knowledge base for core concepts, terminology, and analytical frameworks in statistics and probability. It focuses on organizing fundamental ideas that support understanding, modeling, and analysis of uncertainty, randomness, and data-driven phenomena.
@@ -248,6 +251,12 @@ Hypothesis testing is a form of statistical inference that uses data from a samp
 
 ---
 
+### Statistical Power
+*Definition*:   
+Statistical power is the probability that a hypothesis test correctly rejects the null hypothesis when the alternative hypothesis is true (i.e., the probability of a true positive). It is primarily used in study design to assess a test’s ability to detect a real effect.
+
+
+---
 ### F-Test
 *Definition*:   
 An F-test is any statistical test that uses an F-distributed test statistic under the null hypothesis.
@@ -330,3 +339,23 @@ PCA (Principal Component Analysis) is a dimensionality reduction technique that 
 The projection is chosen such that the first principal component captures the maximum possible variance in the data, and each subsequent component captures the maximum remaining variance subject to being orthogonal to the previous ones.
 
 The resulting principal components define the best low-dimensional linear approximation of the original data in terms of minimizing reconstruction error.
+
+---
+
+### Bayes' Theorem
+*Definition*:   
+Bayes’ theorem describes how to update the probability of an event given new evidence, by relating conditional and marginal probabilities.
+
+Bayes’ Theorem states that, for events A and B with P(B) > 0, the conditional probability of A given B is
+
+$$P(A \mid B) = \frac{P(B \mid A)\,P(A)}{P(B)}, \quad P(B) > 0$$
+
+The Naive Bayes algorithm is a family of probabilistic classifiers based on Bayes’ theorem, with the simplifying assumption that features are conditionally independent given the class label.
+
+---
+
+### Central Limit Theorem
+*Definition*:   
+The Central Limit Theorem states that, for a sufficiently large sample size, the sampling distribution of the sample mean approaches a normal distribution, regardless of the distribution of the original population, provided that the observations are independent and have finite variance.
+
+Specifically, if the population has mean $\mu$ and variance $\sigma^2$, then the sample mean has mean $\mu$ and variance $\frac{\sigma^2}{n}$.

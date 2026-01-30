@@ -15,6 +15,7 @@ A curated knowledge base of modeling concepts, processes, and analytical foundat
     - [Random Forest](#random-forest)
     - [K-Means Clustering](#k-means-clustering)
     - [Hierarchical Clustering](#hierarchical-clustering)
+    - [Neural Networks](#neural-networks)
 - [Modeling Concepts](#modeling-concepts)
     - [Feature Engineering](#feature-engineering)
     - [Feature Selection](#feature-selection)
@@ -25,6 +26,7 @@ A curated knowledge base of modeling concepts, processes, and analytical foundat
     - [Resampling](#resampling)
     - [Cross-Validation](#cross-validation)
     - [Bootstrapping](#bootstrapping)
+    - [Ensemble Learning](#ensemble-learning)
     - [Bagging](#bagging)
     - [Boosting](#boosting)
     - [Stacking](#stacking)
@@ -218,6 +220,27 @@ Compared with K-means, hierarchical clustering does not require choosing K befor
 
 ---
 
+### Neural Networks
+*Definition*:    
+A neural network is a series of algorithms that endeavors to recognize underlying relationships in a dataset through a process that mimics the way the human brain operates.
+
+*Advantages*: 
+- lead to performance breakthroughs for unstructured datasets such as images, audio, and video;
+- learn patterns that no other ML algorithm can learn.
+
+*Disadvantages*:
+- internal hidden layers are incomprehensible;
+- require a large amount of training data;
+- hard to pick the right architecture and hyperparameter.
+
+*Backpropagation*:   
+Backpropagation is the algorithm for computing artificial neural networks. It is used by the gradient descent optimization that exploits the chain rule. By calculating the gradient of the loss function, the weight of the neurons is adjusted to a certain value.
+
+*Gradient Descent*:   
+Gradient descent is an iterative first-order optimization algorithm used to find a local minimum/maximum of a given function. This method is commonly used in machine learning and deep learning to minimize a cost/loss function.
+
+---
+
 ## Modeling Concepts
 
 ### Feature Engineering
@@ -298,6 +321,17 @@ Cross-validation is a resampling procedure used to evaluate machine learning mod
 ### Bootstrapping
 *Definition*:   
 Samples are drawn from the dataset with replacement, where those instances not drawn into the data sample may be used for the test set.
+
+---
+
+### Ensemble Learning
+*Definition*:  
+Ensemble learning is a machine learning paradigm in which multiple models are trained to solve the same problem and their predictions are combined to improve overall predictive performance.
+
+*Methods*:
+- Bagging;
+- Boosting;
+- Stacking.
 
 ---
 

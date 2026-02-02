@@ -27,6 +27,7 @@ A curated knowledge base for statistical and probabilistic concepts, distributio
   - [PCA](#pca)
   - [Bayes' Theorem](#bayes-theorem)
   - [Central Limit Theorem](#central-limit-theorem)
+  - [Degress of Freedom](#degress-of-freedom)
 
 ## Project Background
 This document serves as a personal knowledge base for core concepts, terminology, and analytical frameworks in statistics and probability. It focuses on organizing fundamental ideas that support understanding, modeling, and analysis of uncertainty, randomness, and data-driven phenomena.
@@ -359,3 +360,15 @@ The Naive Bayes algorithm is a family of probabilistic classifiers based on Baye
 The Central Limit Theorem states that, for a sufficiently large sample size, the sampling distribution of the sample mean approaches a normal distribution, regardless of the distribution of the original population, provided that the observations are independent and have finite variance.
 
 Specifically, if the population has mean $\mu$ and variance $\sigma^2$, then the sample mean has mean $\mu$ and variance $\frac{\sigma^2}{n}$.
+
+---
+
+### Degrees of Freedom
+*Definition*:   
+Degrees of freedom refer to the number of independent pieces of information that can vary freely when estimating a parameter, given certain constraints.
+
+
+*Why do we divide sample variance by $n-1$ when calculating sample variance?*：
+When computing the sample variance, the population mean is unknown and is therefore estimated using the sample mean. This estimation introduces a constraint: the sum of the deviations from the sample mean must equal zero. As a result, only n − 1 independent deviations are free to vary.
+
+Consequently, the sample variance is divided by n − 1 rather than n, reflecting the loss of one degree of freedom and yielding an unbiased estimator of the population variance.

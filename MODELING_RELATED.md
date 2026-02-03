@@ -16,6 +16,10 @@ A curated knowledge base of modeling concepts, processes, and analytical foundat
     - [K-Means Clustering](#k-means-clustering)
     - [Hierarchical Clustering](#hierarchical-clustering)
     - [Neural Networks](#neural-networks)
+- [Time Series Analysis](#time-series-analysis)
+    - [Simple Exponential Smoothing (SES)](#simple-exponential-smoothing-ses)
+    - [Holt’s Linear Trend Method](#holts-linear-trend-method)
+    - [Holt-Winters Seasonal Method](#holt-winters-seasonal-method)
 - [Modeling Concepts](#modeling-concepts)
     - [Feature Engineering](#feature-engineering)
     - [Feature Selection](#feature-selection)
@@ -38,6 +42,7 @@ This document serves as a personal knowledge base for concepts, terminology, and
 The goal of this document is to provide a centralized and structured reference for core model-related knowledge, enabling clearer understanding, consistent usage of modeling terminology, and more effective analysis and application of models in practice.
 
 ## Models
+
 ### Linear Regression
 *Definition*:   
 Linear regression is a regression model that assumes a linear relationship between the independent variables and the single dependent variable.
@@ -238,6 +243,32 @@ Backpropagation is the algorithm for computing artificial neural networks. It is
 
 *Gradient Descent*:   
 Gradient descent is an iterative first-order optimization algorithm used to find a local minimum/maximum of a given function. This method is commonly used in machine learning and deep learning to minimize a cost/loss function.
+
+---
+
+## Time Series Analysis
+
+### Simple Exponential Smoothing (SES)
+*Definition*:    
+Simple Exponential Smoothing is a time series forecasting method that assigns exponentially decreasing weights to past observations, with more weight given to recent observations.
+
+SES is appropriate for time series data with no clear trend or seasonality.
+
+---
+
+### Holt’s Linear Trend Method
+*Definition*:    
+Holt’s linear trend method extends Simple Exponential Smoothing by incorporating a trend component.
+
+It is used for time series data that exhibit a trend but no seasonality.
+
+---
+
+### Holt-Winters Seasonal Method
+*Definition*:  
+The Holt-Winters seasonal method extends Simple Exponential Smoothing by incorporating both trend and seasonality.
+
+It consists of a forecast equation and three smoothing equations for the level, trend, and seasonal components. This method is used for time series data with both trend and seasonality.
 
 ---
 

@@ -5,6 +5,7 @@ A centralized reference for marketing-related concepts, metrics, and data analys
 - [Project Background](#project-background)
 - [Project Goal](#project-goal)
 - [Concepts](#concepts)
+  - [RFM](#rfm)
   - [CAC](#cac)
   - [LTV](#lvt)
   - [ROAS](#roas)
@@ -18,6 +19,13 @@ This document serves as a personal knowledge base for concepts and terminology a
 The goal of this document is to provide a centralized and structured reference for key marketing and analytics concepts, enabling quick recall, clearer understanding, and consistent usage in analysis, modeling, and decision-making.
 
 ## Concepts
+
+### RFM
+*Definition*:   
+RFM (Recency, Frequency, Monetary Value) is a customer segmentation method that analyzes transactional data to assess customer value and engagement.
+
+---
+
 ### CAC
 *Definition*:   
 CAC (Customer Acquisition Cost) measures the spending to acquire one paying customer.

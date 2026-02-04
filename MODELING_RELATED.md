@@ -17,6 +17,7 @@ A curated knowledge base of modeling concepts, processes, and analytical foundat
     - [Hierarchical Clustering](#hierarchical-clustering)
     - [Neural Networks](#neural-networks)
 - [Time Series Analysis](#time-series-analysis)
+    - [AutoRegressive Integrated Moving Average (ARIMA)](#autoregressive-integrated-moving-average-arima)
     - [Simple Exponential Smoothing (SES)](#simple-exponential-smoothing-ses)
     - [Holt’s Linear Trend Method](#holts-linear-trend-method)
     - [Holt-Winters Seasonal Method](#holt-winters-seasonal-method)
@@ -247,6 +248,21 @@ Gradient descent is an iterative first-order optimization algorithm used to find
 ---
 
 ## Time Series Analysis
+
+### AutoRegressive Integrated Moving Average (ARIMA)
+*Definition*:    
+AutoRegressive Integrated Moving Average is a time series forecasting model that combines autoregressive terms, differencing, and moving average terms to model temporal dependencies in the data.
+
+
+*ACF*:   
+The Autocorrelation Function (ACF) measures the correlation between a time series and its lagged values. In other words, it describes how current observations are correlated with past observations at different lags.
+
+For a moving average model MA($q$), the ACF typically shows a sharp cut-off after lag $q$, while the autocorrelations for larger lags are close to zero.
+
+*PACF*:   
+The Partial Autocorrelation Function (PACF) measures the correlation between a time series and its lagged values after removing the effects of intermediate lags. It captures the direct relationship between an observation and its lag.
+
+For an autoregressive model AR($p$), the PACF usually exhibits a sharp cut-off after lag $p$, whereas the ACF tends to decay gradually.
 
 ### Simple Exponential Smoothing (SES)
 *Definition*:    

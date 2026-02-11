@@ -5,12 +5,12 @@ A centralized reference for marketing-related concepts, metrics, and data analys
 - [Project Background](#project-background)
 - [Project Goal](#project-goal)
 - [Concepts](#concepts)
-  - [RFM](#rfm)
-  - [CAC](#cac)
-  - [LTV](#lvt)
-  - [ROAS](#roas)
-  - [Incrementality](#incrementality)
-  - [MMM](#mmm)
+    - [RFM](#rfm)
+    - [CAC](#cac)
+    - [LTV](#lvt)
+    - [ROAS](#roas)
+    - [Incrementality](#incrementality)
+    - [MMM](#mmm)
 
 ## Project Background
 This document serves as a personal knowledge base for concepts and terminology at the intersection of marketing and data analytics. It consolidates commonly used metrics, methodologies, and analytical frameworks that are frequently encountered in data-driven marketing work.

@@ -5,10 +5,17 @@ A centralized reference for SQL syntax, functions, and query patterns commonly u
 - [Project Background](#project-background)
 - [Project Goal](#project-goal)
 - [Syntax](#syntax)
-  - [General](#general)
-  - [Math](#math)
-  - [Date & Time](#date--time)
-  - [String](#string)
+    - [General](#general)
+    - [Math](#math)
+    - [Date & Time](#date--time)
+    - [String](#string)
+- [Concepts](#concepts)
+    - [What is Window function?](#what-is-window-function)
+    - [Difference between star schema and snowflake schema](#difference-between-star-schema-and-snowflake-schema)
+    - [Difference between INNER and OUTER JOINs](#difference-between-inner-and-outer-joins)
+    - [Difference between relational and non-relational databases](#difference-between-relational-and-non-relational-databases)
+    - [Difference between ROW_NUMBER(), RANK() and DENSE_RANK()](#difference-between-row_number-rank-and-dense_rank)
+    - [Difference between CUBE() and ROLLUP()](#difference-between-cube-and-rollup)
 
 ## Project Background
 This document serves as a personal knowledge base for SQL concepts, syntax, and query techniques frequently used in data analysis and analytics workflows. It consolidates common patterns, functions, and best practices encountered in real-world analytical tasks.
@@ -64,3 +71,46 @@ The goal of this document is to provide a centralized and structured reference f
 - `REGEXP '^[a-zA-z][a-zA-z0-9._-]*@test\\.com$'` – Return a string follows the REGEX expression
 - `REGEXP_SUBSTR(str_col, '#[A-Za-z0-9_]+')'` – Return a string part that match the REGEX expression
 - `str_col LIKE '@%_'` – Return a string that follows the pattern (`%` represents zero, one, or multiple characters; `_` represents one, single character)
+
+## Concepts
+
+### What is Window function?
+A window function performs a calculation across a set of rows related to the current row, without collapsing the result set like GROUP BY. It uses the OVER() clause to define the window of rows.
+
+---
+
+### Difference between star schema and snowflake schema: 
+In a star schema, dimension tables are denormalized and directly connected to the fact table.
+
+In a snowflake schema, dimension tables are normalized into multiple related tables, forming a more complex structure.
+
+---
+
+### Difference between INNER and OUTER JOINs:
+
+An INNER JOIN returns only the rows that have matching values in both tables.
+
+An OUTER JOIN returns matching rows as well as unmatched rows from one or both tables, depending on the type (LEFT, RIGHT, or FULL).
+
+---
+
+### Difference between relational and non-relational databases:
+Relational databases store structured data in tables with predefined schemas and relationships, typically using SQL.
+
+Non-relational databases (NoSQL) store data in flexible formats such as key-value, document, column-family, or graph models, and often allow dynamic schemas.
+
+---
+
+### Difference between ROW_NUMBER(), RANK() and DENSE_RANK():
+ROW_NUMBER() assigns a unique sequential number to each row.
+
+RANK() assigns the same rank to tied rows but skips the next ranking value.
+
+DENSE_RANK() assigns the same rank to tied rows without skipping subsequent ranking values.
+
+---
+
+### Difference between CUBE() and ROLLUP():
+ROLLUP generates hierarchical subtotals from left to right in the GROUP BY clause.
+
+CUBE generates all possible combinations of grouping columns, producing more subtotal combinations.

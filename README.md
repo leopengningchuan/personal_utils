@@ -6,22 +6,22 @@ Reusable Python utilities for file, text, and data tasks
 - [Project Goal](#project-goal)
 - [File Structure](#file-structure)
 - [Instructions](#instructions)
-  - [Using the Utils](#using-the-utils)
-  - [Packages Used](#packages-used)
-  - [docx_utils](#docx_utils)
-    - [populate_docx_table](#populate_docx_table)
-    - [populate_docx_paragraph](#populate_docx_paragraph)
-  - [xlsx_utils](#xlsx_utils)
-    - [adjust_xlsx_columns](#adjust_xlsx_columns)
-  - [pdf_utils](#pdf_utils)
-    - [convert_docx_pdf](#convert_docx_pdf)
-    - [merge_pdfs](#merge_pdfs)
-  - [email_utils](#email_utils)
-    - [validate_email](#validate_email)
-    - [format_valid_emails](#format_valid_emails)
-    - [windows_outlook_send_email](#windows_outlook_send_email)
-  - [google_api_utils](#google_api_utils)
-    - [gsheet_upload](#gsheet_upload)
+    - [Using the Utils](#using-the-utils)
+    - [Packages Used](#packages-used)
+    - [docx_utils](#docx_utils)
+        - [populate_docx_table](#populate_docx_table)
+        - [populate_docx_paragraph](#populate_docx_paragraph)
+    - [xlsx_utils](#xlsx_utils)
+        - [adjust_xlsx_columns](#adjust_xlsx_columns)
+    - [pdf_utils](#pdf_utils)
+        - [convert_docx_pdf](#convert_docx_pdf)
+        - [merge_pdfs](#merge_pdfs)
+    - [email_utils](#email_utils)
+        - [validate_email](#validate_email)
+        - [format_valid_emails](#format_valid_emails)
+        - [windows_outlook_send_email](#windows_outlook_send_email)
+    - [google_api_utils](#google_api_utils)
+        - [gsheet_upload](#gsheet_upload)
 - [Note and Reference](#note-and-reference)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
@@ -52,6 +52,9 @@ Core Logic:
 Note & Information:
 - `NOTE_AND_REFERENCE.md` – notes and references
 - `MARKETING_RELATED.md` – marketing related information
+- `MODELING_RELATED.md` – modeling related information
+- `SQL_RELATED.md` – SQL related information
+- `STATISTICS_AND_PROBABILITY_RELATED.md` – statistics and probability related information
 
 ## Instructions
 
